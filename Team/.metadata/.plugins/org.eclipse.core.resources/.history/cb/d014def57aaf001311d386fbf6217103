@@ -1,0 +1,20 @@
+package tests;
+
+import utils.file.CaricamentoFile;
+import utils.log.Attivita;
+import utils.log.InterpreteFileLogTest;
+import utils.report.GeneraReportConsole;
+
+public class Tests03 {
+	public static void main(String[] args) {
+		CaricamentoFile file = new CaricamentoFile();
+		file.setNomeFile("prova2.txt");
+		InterpreteFileLogTest logTest = new InterpreteFileLogTest();
+		logTest.fileToLog(file.getList());
+		GeneraReportConsole reportConsole = new GeneraReportConsole(logTest);
+		reportConsole.creaReport();
+		Attivita attivita = new Attivita(10, "Prova");
+		attivita.sommaOre(20);
+		System.out.println(attivita);
+	}
+}

@@ -1,0 +1,11 @@
+package utils.log;
+
+import java.util.ArrayList;
+
+public interface InterpreteFileLog {
+	
+	public void fileToLog(ArrayList<String> list);
+	
+	public ArrayList<Log> getLogs();
+
+}

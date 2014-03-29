@@ -1,0 +1,32 @@
+/**
+ * Questa classe permette di creare un formato "facile" da utilizzare del file dizionario
+ * letto. L'utilizzo delle HashMap, permette di facilitare la creazione di esso
+ * @author Giacomo
+ */
+package utils;
+
+import java.util.HashMap;
+
+public class Dizionario {
+	private static String separatoreParole = "\\-";
+	private static String sepratoreFrase = "\\-/";
+	public static HashMap<String , String > corrispondenza = new HashMap<>();
+	public static HashMap<String, String> corrispondenzaFrase = new HashMap<>();
+
+	public static HashMap<String, String> getCorrispondenza() {
+		return corrispondenza;
+	}
+
+	public static void setCorrispondenza(HashMap<String, String> corrispondenza,String string) {
+		CaricaDizionario.setFileName(string);
+		for (int i = 0; i < CaricaDizionario.list.size(); i++) {
+			String[] arr = CaricaDizionario.list.get(i).split("\\-");
+			String parolaOriginale = arr[0]; 
+			String parolaTradotta = arr[1];
+			String[] strings = CaricaDizionario.list.get(i).split("\\-/");
+			String frase = strings[1];
+			corrispondenza.put(parolaOriginale, parolaTradotta);
+			corrispondenzaFrase.put(parolaTradotta, frase);
+		}
+	}
+}

@@ -1,0 +1,6 @@
+1389641914816	Rename type 'Cassa'
+1389642672247	Rename field 'nomePanino'
+1389687808161	Move compilation unit
+1389688864808	Extract method 'impostaJMenuItemsQuantità'
+1389688875282	Extract method 'impostaJMenuItemsProdotti'
+1389688892057	Extract method 'impostaJMenu'

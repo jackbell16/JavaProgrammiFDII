@@ -1,0 +1,138 @@
+package userpanel;
+
+import java.awt.BorderLayout;
+import java.awt.event.ActionEvent;
+import java.awt.event.ActionListener;
+import java.util.ArrayList;
+
+import javax.swing.JButton;
+import javax.swing.JFrame;
+import javax.swing.JMenu;
+import javax.swing.JMenuBar;
+import javax.swing.JMenuItem;
+import javax.swing.JTextArea;
+
+import utils.CassaPizzeria;
+import utils.Pizza;
+import utils.RistorantePizzeria;
+
+public class PannelloCassa {
+	static int quantità = 0;
+	static String newLine = "\n";
+	final static RistorantePizzeria pizzeria = new RistorantePizzeria();
+	final static ArrayList<JMenuItem> jMenuItemsPizze = new ArrayList<>();
+	final static CassaPizzeria cassaPizzeria = new CassaPizzeria();
+	final static JTextArea area = new JTextArea();
+	
+	private static void selezionaPizzaMenu(final int i) {
+		jMenuItemsPizze.get(i).addActionListener(new ActionListener() {
+			
+			@Override
+			public void actionPerformed(ActionEvent e) {
+				area.append(quantità+" x "+pizzeria.getListaPizze().get(i).toString()+" = "+calcolaRisultatoParziale(i));
+				area.append(newLine);
+				cassaPizzeria.aggiungiProdotti(pizzeria.getListaPizze().get(i), quantità);
+			}
+		});
+	}
+	
+	private static double calcolaRisultatoParziale(int idexPizza){
+		return quantità*pizzeria.getListaPizze().get(idexPizza).getPrezzo();
+	}
+	
+	private static void impostaSelezionaPizze() {
+		for (int i = 0; i < jMenuItemsPizze.size(); i++) {
+			selezionaPizzaMenu(i);
+		}
+	}
+	
+	public static void main(String[] args) {
+			final Pizza pizza = new Pizza("Margherita", 4);
+			Pizza pizza2 = new Pizza("Napoli", 5);
+			Pizza pizza3 = new Pizza("Prosciutto", 4.5);
+			pizzeria.aggiungiPizza(pizza);
+			pizzeria.aggiungiPizza(pizza2);
+			pizzeria.aggiungiPizza(pizza3);
+			final JButton calcolaButton = new JButton("Calcola");
+			JMenuBar jMenuBar = new JMenuBar();
+			JMenu menu = new JMenu("Seleziona quantità");
+			JMenu menu2 = new JMenu("Seleziona pizza");
+			JMenuItem item = new JMenuItem("x1");
+			JMenuItem item2 = new JMenuItem("x2");
+			JMenuItem item3 = new JMenuItem("x3");
+			JMenuItem item4 = new JMenuItem("x4");
+			System.out.println(pizzeria.getListaPizze().size());
+			inserisciJMenuItemPizze();
+			for (int i = 0; i < jMenuItemsPizze.size(); i++) {
+				menu2.add(jMenuItemsPizze.get(i));
+			}	
+			menu.add(item);
+			menu.add(item2);
+			menu.add(item3);
+			menu.add(item4);
+			jMenuBar.add(menu);
+			jMenuBar.add(menu2);
+			area.setEditable(false);
+			item.addActionListener(new ActionListener() {
+				
+				@Override
+				public void actionPerformed(ActionEvent e) {
+					quantità = 1;
+					
+				}
+			});
+			item2.addActionListener(new ActionListener() {
+				
+				@Override
+				public void actionPerformed(ActionEvent e) {
+					quantità = 2;
+					
+				}
+			});
+			item3.addActionListener(new ActionListener() {
+				
+				@Override
+				public void actionPerformed(ActionEvent e) {
+					quantità = 3;
+					
+				}
+			});
+			item3.addActionListener(new ActionListener() {
+				
+				@Override
+				public void actionPerformed(ActionEvent e) {
+					quantità = 4;
+					
+				}
+			});
+			impostaSelezionaPizze();
+			
+			calcolaButton.addActionListener(new ActionListener() {
+				
+				@Override
+				public void actionPerformed(ActionEvent e) {
+					double totale = cassaPizzeria.calcolaConto();
+					area.append(newLine);
+					area.append(""+totale);
+					System.out.println(totale);
+				}
+			});
+			JFrame frame = new JFrame("Pizzeria");
+			frame.setSize(500, 500);
+			frame.setDefaultCloseOperation(JFrame.EXIT_ON_CLOSE);
+			frame.setJMenuBar(jMenuBar);
+			frame.add(calcolaButton,BorderLayout .SOUTH);
+			frame.add(area,BorderLayout .CENTER);
+			frame.setVisible(true);
+		}
+
+	private static void inserisciJMenuItemPizze() {
+		for (int i = 0; i < pizzeria.getListaPizze().size(); i++) {
+			JMenuItem jMenuItem = new JMenuItem(pizzeria.getListaPizze().get(i).toString());
+			jMenuItemsPizze.add(jMenuItem);
+		}
+	}
+
+	
+		
+}

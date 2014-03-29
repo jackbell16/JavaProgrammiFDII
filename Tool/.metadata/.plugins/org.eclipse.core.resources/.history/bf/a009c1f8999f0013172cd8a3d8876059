@@ -1,0 +1,22 @@
+package gui.user;
+
+import javax.swing.JFrame;
+import javax.swing.JPanel;
+
+import filtri.utils.ProxyFiltro;
+
+public class ToolMain {
+	public static void main(String[] args) {
+		ProxyFiltro proxyFiltro = new ProxyFiltro();
+		ToolMenu toolMenu = new ToolMenu(proxyFiltro);
+		ToolView toolView = new ToolView(proxyFiltro);
+		JFrame frame = new JFrame("Tool");
+		frame.setSize(500, 500);
+		frame.setDefaultCloseOperation(JFrame.EXIT_ON_CLOSE);
+		frame.setJMenuBar(toolMenu);
+		JPanel panel = new JPanel();
+		panel.add(toolView);
+		frame.getContentPane().add(toolView);
+		frame.setVisible(true);
+	}
+}

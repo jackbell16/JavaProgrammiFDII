@@ -1,0 +1,50 @@
+package utils;
+
+public class Portata {
+	private String nomePortata;
+	private double prezzo;
+	private boolean abbondante;
+	private static double aggiungaAbbondante = 1;
+	public Portata(String nomePortata, double prezzo, boolean abbondante) {
+		super();
+		this.nomePortata = nomePortata;
+		this.prezzo = prezzo;
+		setPrezzo(prezzo);
+		this.abbondante = abbondante;
+	}
+	
+	public Portata(String nomePortata, double prezzo) {
+		super();
+		this.nomePortata = nomePortata;
+		this.prezzo = prezzo;
+	}
+
+	public String getNomePortata() {
+		return nomePortata;
+	}
+
+	public void setNomePortata(String nomePortata) {
+		this.nomePortata = nomePortata;
+	}
+
+	public double getPrezzo() {
+		return prezzo;
+	}
+
+	public void setPrezzo(double prezzo) {
+		this.prezzo = prezzo+aggiungaAbbondante;
+	}
+
+	public boolean isAbbondante() {
+		return abbondante;
+	}
+
+	public void setAbbondante(boolean abbondante) {
+		this.abbondante = abbondante;
+	}
+	
+	@Override
+	public String toString(){
+		return getNomePortata()+" "+getPrezzo()+" Euro ";
+	}	
+}

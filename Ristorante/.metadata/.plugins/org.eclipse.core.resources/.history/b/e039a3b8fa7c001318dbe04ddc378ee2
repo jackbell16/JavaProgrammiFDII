@@ -1,0 +1,63 @@
+package panel;
+
+import java.awt.event.ActionEvent;
+import java.awt.event.ActionListener;
+import java.util.ArrayList;
+
+import javax.swing.JMenu;
+import javax.swing.JMenuBar;
+import javax.swing.JMenuItem;
+
+import utils.Prodotto;
+
+public class MenuPannello extends JMenuBar {
+	
+	ArrayList<JMenuItem> jMenuItemsquantità = new ArrayList<>();
+	ArrayList<JMenuItem> jMenuItemsprodotti = new ArrayList<>();
+
+	public JMenuBar setMenu(JMenuBar menuBar, ArrayList<JMenu> menus, int quantità, ArrayList<Prodotto> prodotti){
+		
+		impostaJMenuItemsQuantità(menus, quantità);
+		
+		impostaJMenuItemsProdotti(menus, prodotti);
+		
+		impostaJMenu(menuBar, menus);
+		
+		return menuBar;
+	}
+	
+	public void aziona(){
+		jMenuItemsprodotti.listIterator().next().addActionListener(new ActionListener() {
+			
+			@Override
+			public void actionPerformed(ActionEvent e) {
+				System.out.println("é stato premuto qualcosa");
+				
+			}
+		});
+	}
+	
+	
+
+	private void impostaJMenu(JMenuBar menuBar, ArrayList<JMenu> menus) {
+		menuBar.add(menus.get(0));
+		menuBar.add(menus.get(1));
+	}
+
+	private void impostaJMenuItemsProdotti(ArrayList<JMenu> menus,
+			ArrayList<Prodotto> prodotti) {
+		for (int i = 0; i < prodotti.size(); i++) {
+			JMenuItem menuItem = new JMenuItem(prodotti.get(i).toString());
+			jMenuItemsprodotti.add(menuItem);
+			menus.get(1).add(menuItem);
+		}
+	}
+
+	private void impostaJMenuItemsQuantità(ArrayList<JMenu> menus, int quantità) {
+		for (int i = 0; i < quantità; i++) {
+			JMenuItem menuItem = new JMenuItem(i+1+"x");
+			jMenuItemsquantità.add(menuItem);
+			menus.get(0).add(menuItem);
+		}
+	}
+}

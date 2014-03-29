@@ -1,0 +1,27 @@
+package gui.user;
+
+import javax.swing.JPanel;
+
+import filtri.utils.ProxyFiltro;
+
+public class ToolController extends JPanel {
+	
+	public ToolController(final ProxyFiltro proxyFiltro) {
+//		super();
+//		final JTextField field = new JTextField();
+//		JButton button = new JButton("Invio");
+//		setLayout(new GridLayout(2,1));
+//		add(field,BorderLayout.NORTH);
+//		add(button,BorderLayout.SOUTH);
+//		button.addActionListener(new ActionListener() {
+//			
+//			@Override
+//			public void actionPerformed(ActionEvent e) {
+//				proxyFiltro.setNome(field.getText());
+//				proxyFiltro.update();
+//				
+//			}
+//		});
+	}
+
+}

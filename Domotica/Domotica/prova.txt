@@ -1,0 +1,8 @@
+Info (18:11:21) Avvio dell'impianto
+Info (18:11:21) Caricamento delle interfacce elettroniche
+Allarme(18:11:21) Non e'̀ stato possibile accendere Caldaia 01
+Info (18:30:21) Schedulazione dell'evento 'Accensione Caldaia 02'
+Info (19:00:21) Spegnimento Luce 01
+Info (19:00:21) Spegnimento Luce 02
+Allarme(19:10:21) Schedulazione di 'Spegnimento Caldaia 01' fallita
+Allarme(19:10:21) prova aggiornamento

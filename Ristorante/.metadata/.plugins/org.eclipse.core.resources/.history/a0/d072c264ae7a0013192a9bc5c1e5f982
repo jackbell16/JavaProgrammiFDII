@@ -1,0 +1,33 @@
+package utils;
+
+public class Pizza {
+	
+	private String nomePizza;
+	private float prezzo;
+	
+	public Pizza(String nomePizza, float prezzo) {
+		super();
+		this.nomePizza = nomePizza;
+		this.prezzo = prezzo;
+	}
+	
+	public String getNomePizza() {
+		return nomePizza;
+	}
+	
+	public void setNomePizza(String nomePizza) {
+		this.nomePizza = nomePizza;
+	}
+	
+	public float getPrezzo() {
+		return prezzo;
+	}
+	
+	public void setPrezzo(int prezzo) {
+		this.prezzo = prezzo;
+	}
+	@Override
+	public String toString(){
+		return getNomePizza()+" "+getPrezzo()+" Euro";
+	}
+}

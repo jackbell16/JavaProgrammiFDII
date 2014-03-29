@@ -1,0 +1,12 @@
+Giuseppe Verdi 4 Testing 01-03-2014
+Giuseppe Verdi 4 Meating 01-03-2014
+Federico Rossi 4 Documentation 01-03-2014
+Federico Rossi 4 Meating 01-03-2014
+Mario Bianchi 4 Development 01-03-2014
+Mario Bianchi 4 Meating 01-03-2014
+Giuseppe Verdi 8 Testing 02-03-2014
+Federico Rossi 8 Documentation 02-03-2014
+Mario Bianchi 8 Development 02-03-2014
+Giuseppe Verdi 8 Testing 03-03-2014
+Federico Rossi 8 Development 03-03-2014
+Mario Bianchi 8 Documentation 03-03-2014

@@ -1,0 +1,8 @@
+/**
+ * Questa classe ha lo scopo di caricare il dizionario scelto dall'utente
+ */
+package utils;
+
+public class CaricamentoDizionario {
+	
+}

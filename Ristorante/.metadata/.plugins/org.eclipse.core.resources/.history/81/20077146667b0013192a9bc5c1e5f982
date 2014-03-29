@@ -1,0 +1,55 @@
+package utils;
+
+import java.util.ArrayList;
+
+public class CassaPaninoteca {
+	private static double costoMenuFisso = 8;
+	public ArrayList<ProdottoPaninoteca> paniniMangiati;
+	public ArrayList<ProdottoPaninoteca> bibitaBevute;
+	public double totale;
+	public double calcolaConto(){
+		totale=0;
+		if(verificaMenuPrezzoFisso()){
+			applicaMenuPrezzoFisso();
+		}else{
+			calcolaPrezzoPanini();
+			calcolaPrezzoBibite();
+		}
+		paniniMangiati.clear();
+		bibitaBevute.clear();
+		return totale;
+	}
+	public void aggiungiPanini(Panino panino, int quantità){
+		for (int i = 0; i < quantità; i++) {
+			paniniMangiati.add(panino);
+		}
+	}
+	public void aggiungiBibite(Bibita bibita, int quantità){
+		for (int i = 0; i < quantità; i++) {
+			bibitaBevute.add(bibita);
+		}
+	}
+	
+	private void calcolaPrezzoPanini(){
+		for (int i = 0; i < paniniMangiati.size(); i++) {
+			totale+=paniniMangiati.get(i).getPrezzo();
+		}
+	}
+	
+	private void calcolaPrezzoBibite(){
+		for (int i = 0; i < bibitaBevute.size(); i++) {
+			totale+=bibitaBevute.get(i).getPrezzo();
+		}
+	}
+	private void applicaMenuPrezzoFisso(){
+		totale = costoMenuFisso;
+	}
+	
+	private boolean verificaMenuPrezzoFisso(){
+		if(paniniMangiati.size()==1 && bibitaBevute.size()==1){
+			return true;
+		}else{
+			return false;
+		}
+	}	
+}	

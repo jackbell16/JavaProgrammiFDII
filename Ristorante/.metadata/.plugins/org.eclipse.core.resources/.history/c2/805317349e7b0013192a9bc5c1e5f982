@@ -1,0 +1,32 @@
+package utils;
+
+import java.util.ArrayList;
+
+public class CassaCinese {
+	
+	private ArrayList<ProdottoCinese> conto = new ArrayList<>();
+	public static double aggiungaAbbondante = 1;
+	
+	public ArrayList<ProdottoCinese> getConto() {
+		return conto;
+	}
+	public void setConto(ArrayList<ProdottoCinese> conto) {
+		this.conto = conto;
+	}
+	public double calcolaConto(){
+		double totale = 0;
+		for (int i = 0; i < conto.size(); i++) {
+			totale+=conto.get(i).getPrezzo();
+			if(conto.get(i).isAbbondante()){
+				totale+=aggiungaAbbondante;
+			}
+		}
+		//conto.clear();
+		return totale;
+	}
+	public void aggiungiProdotti(ProdottoCinese portata, int quantità){
+		for (int i = 0; i < quantità; i++) {
+			conto.add(portata);
+		}
+	}	
+}

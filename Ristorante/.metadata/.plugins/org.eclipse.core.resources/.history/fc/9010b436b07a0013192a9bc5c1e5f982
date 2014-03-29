@@ -1,0 +1,17 @@
+package utils;
+
+import java.util.ArrayList;
+
+public class RistorantePizzeria {
+	
+	private ArrayList<Pizza> listaPizze = new ArrayList<>();
+	
+	public ArrayList<Pizza> getListaPizze() {
+		return listaPizze;
+	}
+
+	public void aggiungiPizza(Pizza pizza){
+		listaPizze.add(pizza);
+	}
+	
+}

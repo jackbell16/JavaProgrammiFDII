@@ -1,0 +1,43 @@
+/**
+ * Questa classe contiene l'astrazione sul concetto di Orario, che è presente in ogni log
+ * @author Giacomo
+ */
+package time;
+
+public class Orario {
+	
+	private String ora;
+	private String minuti;
+	private String secondi;
+	
+	public Orario(String ora, String minuti, String secondi) {
+		super();
+		this.ora = ora;
+		this.minuti = minuti;
+		this.secondi = secondi;
+	}
+	public String getOra() {
+		return ora;
+	}
+	public void setOra(String ora) {
+		this.ora = ora;
+	}
+	public String getMinuti() {
+		return minuti;
+	}
+	public void setMinuti(String minuti) {
+		this.minuti = minuti;
+	}
+	public String getSecondi() {
+		return secondi;
+	}
+	public void setSecondi(String secondi) {
+		this.secondi = secondi;
+	}
+	
+	@Override
+	public String toString(){
+		return ora+minuti+secondi;
+	}
+	
+}

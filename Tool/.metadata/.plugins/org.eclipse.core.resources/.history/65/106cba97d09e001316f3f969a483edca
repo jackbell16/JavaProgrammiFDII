@@ -1,0 +1,55 @@
+package utils;
+
+import java.util.ArrayList;
+import java.util.StringTokenizer;
+
+import time.Orario;
+import filtri.utils.Log;
+
+public class InterpreteFileLog {
+
+	private ArrayList<Log> logs = new ArrayList<>();
+	
+	public void fileTolog(ArrayList<String> list){
+		logs.clear();
+		for (int i = 0; i < list.size(); i++) {
+			int index = 0;
+			String testo = "";
+			String tipo;
+			String[] ciao;
+			String ora; 
+			String minuti;
+			String secondi;
+			StringTokenizer tokenizer = new StringTokenizer(list.get(i));
+			while(tokenizer.hasMoreElements()){
+				if(index>0){
+					testo+=tokenizer.nextElement()+" ";
+				}else{
+				String string =	tokenizer.nextElement().toString();
+				String[] stringSplit = string.split("\\(");
+				String tipo = stringSplit[0];
+				String due = stringSplit[1].replace(")", "");
+				String[] ciao = due.split(":");
+				String ora = ciao[0];
+				String minuti = ciao[1];
+				String secondi = ciao[2];
+				}
+				index++;
+			}
+			Orario orario = new Orario(ora, minuti, secondi);
+			Log log = new Log(tipo, orario, testo);
+			logs.add(log);
+			System.out.println(testo);
+		}
+	}
+
+	public ArrayList<Log> getLogs() {
+		return logs;
+	}
+
+	public void setLogs(ArrayList<Log> logs) {
+		this.logs = logs;
+	}
+	
+	
+}

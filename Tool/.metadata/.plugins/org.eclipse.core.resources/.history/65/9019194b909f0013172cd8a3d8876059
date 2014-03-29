@@ -1,0 +1,21 @@
+package gui.user;
+
+import javax.swing.JMenu;
+import javax.swing.JMenuBar;
+import javax.swing.JMenuItem;
+
+public class ToolMenu extends JMenuBar {
+	
+	public ToolMenu(){
+		JMenu menu = new JMenu("File");
+		JMenuItem item = new JMenuItem("Apri file");
+		menu.add(item);
+		JMenu menu2 = new JMenu("Filtra Log");
+		JMenuItem item2 = new JMenuItem("Evento");
+		JMenuItem item3 = new JMenuItem("Errore");
+		JMenuItem item4 = new JMenuItem("Info");
+		menu2.add(item2);
+		menu2.add(item3);
+		menu2.add(item4);
+	}
+}

@@ -1,0 +1,4 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<session version="1.0">
+<refactoring comment="Rename compilation unit &apos;utils.TextField.java&apos; to &apos;Panel.java&apos;&#x0A;- Original project: &apos;Dizionario&apos;&#x0A;- Original element: &apos;utils.TextField.java&apos;&#x0A;- Renamed element: &apos;utils.Panel.java&apos;" description="Rename compilation unit &apos;TextField.java&apos;" flags="2" id="org.eclipse.jdt.ui.rename.compilationunit" input="/src&lt;utils{TextField.java" name="Panel.java" references="false" stamp="1386084691285" version="1.0"/>
+</session>

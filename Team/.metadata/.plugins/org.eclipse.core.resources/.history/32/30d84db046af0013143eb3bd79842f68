@@ -1,0 +1,44 @@
+/**
+ * Questa classe astrae sul concetto di Dipendente, che compie attivita
+ */
+package utils.log;
+
+import java.util.ArrayList;
+
+public class Dipendente {
+	
+	private String nome;
+	private String cognome;
+	private ArrayList<Attivita> attivita = new ArrayList<>();
+	
+	public Dipendente(String nome, String cognome, Attivita attivita) {
+		super();
+		this.nome = nome;
+		this.cognome = cognome;
+		this.attivita.add(attivita);
+	}
+
+	public String getNome() {
+		return nome;
+	}
+
+	public void setNome(String nome) {
+		this.nome = nome;
+	}
+
+	public String getCognome() {
+		return cognome;
+	}
+
+	public void setCognome(String cognome) {
+		this.cognome = cognome;
+	}
+
+	public ArrayList<Attivita> getAttivita() {
+		return attivita;
+	}
+
+	public void setAttivita(ArrayList<Attivita> attivita) {
+		this.attivita = attivita;
+	}
+}

@@ -1,0 +1,18 @@
+package utils;
+
+public class MenuPrezzoFissoTest implements MenuPrezzoFisso {
+	
+	private static double costoMenuFisso = 8;
+	
+	public void applicaMenuPrezzoFisso(double totale){
+		totale = costoMenuFisso;
+	}
+	
+	public boolean verificaMenuPrezzoFisso(){
+		if(1==1){
+			return true;
+		}else{
+			return false;
+		}
+	}	
+}

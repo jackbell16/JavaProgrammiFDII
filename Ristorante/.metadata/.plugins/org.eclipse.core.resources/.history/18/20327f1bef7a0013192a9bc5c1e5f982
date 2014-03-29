@@ -1,0 +1,23 @@
+package utils;
+
+public class Bibita extends ProdottiPaninoteca {
+	private String nomeBibita;
+	private double prezzo;
+	public Bibita(String nomeBibita, double prezzo) {
+		super();
+		this.nomeBibita = nomeBibita;
+		this.prezzo = prezzo;
+	}
+	public String getNomeBibita() {
+		return nomeBibita;
+	}
+	public void setNomeBibita(String nomeBibita) {
+		this.nomeBibita = nomeBibita;
+	}
+	public double getPrezzo() {
+		return prezzo;
+	}
+	public void setPrezzo(double prezzo) {
+		this.prezzo = prezzo;
+	}
+}

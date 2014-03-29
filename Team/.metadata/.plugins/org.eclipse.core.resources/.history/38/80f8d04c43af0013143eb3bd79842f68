@@ -1,0 +1,19 @@
+/**
+ * Questo test ha il compito di verificare il corretto funzionamento della classe 
+ * {@link CaricamentoFile}
+
+import utils.file.CaricamentoFile;
+ */
+package tests;
+
+import utils.file.CaricamentoFile;
+
+public class Tests01 {
+
+	public static void main(String[] args) {
+		CaricamentoFile file = new CaricamentoFile();
+		file.setNomeFile("prova.txt");
+
+	}
+
+}

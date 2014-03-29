@@ -1,0 +1,17 @@
+package tests;
+
+import filtri.utils.Info;
+import utils.CaricamentoFile;
+
+public class Tests03 {
+	public static void main(String[] args) {
+		CaricamentoFile file = new CaricamentoFile();
+		file.setNomeFile("prova.txt");
+		Info info = new Info();
+		
+		for (int i = 0; i < info.filtra(file.getList()).size(); i++) {
+			System.out.println(info.filtra(file.getList()));
+		}
+	}
+
+}

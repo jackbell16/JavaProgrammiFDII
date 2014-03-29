@@ -1,0 +1,15 @@
+package utils;
+
+import java.util.ArrayList;
+import java.util.StringTokenizer;
+
+import time.Orario;
+import filtri.utils.Log;
+
+public class InterpreteFileLog {
+
+	
+	public void fileTolog(ArrayList<String> list){
+		
+	}
+}

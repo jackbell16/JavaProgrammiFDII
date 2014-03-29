@@ -1,0 +1,151 @@
+package userpanel;
+
+import java.awt.BorderLayout;
+import java.awt.event.ActionEvent;
+import java.awt.event.ActionListener;
+import java.util.ArrayList;
+
+import javax.swing.JButton;
+import javax.swing.JFrame;
+import javax.swing.JMenu;
+import javax.swing.JMenuBar;
+import javax.swing.JMenuItem;
+import javax.swing.JTextArea;
+
+import utils.Bibita;
+import utils.CassaPaninoteca;
+import utils.CassaPizzeria;
+import utils.Panino;
+import utils.Paninoteca;
+import utils.Pizza;
+import utils.RistorantePizzeria;
+
+public class PannelloCassaPaninoteca {
+	static int quantità = 0;
+	static String newLine = "\n";
+	static double totale = 0;
+	final static Paninoteca PANINOTECA = new Paninoteca();
+	final static ArrayList<JMenuItem> jMenuItemsPanini = new ArrayList<>();
+	final static ArrayList<JMenuItem> jMenuItemsBibite = new ArrayList<>();
+	final static ArrayList<JMenuItem> jMenuteItemsQuantità = new ArrayList<>();
+	final static CassaPaninoteca CASSA_PANINOTECA = new CassaPaninoteca();
+	final static JTextArea area = new JTextArea();
+	
+	private static void selezionaPaninoMenu(final int i) {
+		jMenuItemsPanini.get(i).addActionListener(new ActionListener() {
+			
+			@Override
+			public void actionPerformed(ActionEvent e) {
+				area.append(quantità+" x "+pizzeria.getListaPizze().get(i).toString()+" = "+calcolaRisultatoParziale(i)+ " Euro");
+				area.append(newLine);
+				cassaPizzeria.aggiungiProdotti(pizzeria.getListaPizze().get(i), quantità);
+			}
+		});
+	}
+	
+	private static double calcolaRisultatoParziale(int idexPizza){
+		return quantità*pizzeria.getListaPizze().get(idexPizza).getPrezzo();
+	}
+	
+	private static void impostaSelezionaPizze() {
+		for (int i = 0; i < jMenuItemsPanini.size(); i++) {
+			selezionaPaninoMenu(i);
+		}
+	}
+	
+	public static void main(String[] args) {
+			Panino panino = new Panino("Prosciutto", 3);
+			Bibita bibita = new Bibita("Cola", 2.50);
+			Panino panino2 = new Panino("Salame", 4);
+			Bibita bibita2 = new Bibita("Acqua", 1);
+			PANINOTECA.aggiungiPanino(panino);
+			PANINOTECA.aggiungiPanino(panino2);
+			PANINOTECA.aggiungiBibia(bibita);
+			PANINOTECA.aggiungiBibia(bibita2);
+			final JButton calcolaButton = new JButton("Calcola");
+			JMenuBar jMenuBar = new JMenuBar();
+			JMenu menu = new JMenu("Seleziona quantità");
+			JMenu menu2 = new JMenu("Seleziona panino");
+			JMenu menu3 = new JMenu("Seleziona bibita");
+			JMenu menu4 = new JMenu("Strumenti");
+			JMenuItem pulisci = new JMenuItem("Pulisci");
+			menu4.add(pulisci);
+			inserisciJMenuteItemQuantità();
+			inserisciJMenuItemPizze();
+			impostaMenuQuantità(menu);
+			impostaMenuPizze(menu2);	
+			jMenuBar.add(menu);
+			jMenuBar.add(menu2);
+			jMenuBar.add(menu3);
+			selezionaMenuQuantità(0);
+			selezionaMenuQuantità(1);
+			selezionaMenuQuantità(2);
+			selezionaMenuQuantità(3);
+			impostaSelezionaPizze();
+			area.setEditable(false);
+			pulisci.addActionListener(new ActionListener() {
+				
+				@Override
+				public void actionPerformed(ActionEvent e) {
+					area.setText(newLine);
+					totale = 0;
+				}
+			});
+			calcolaButton.addActionListener(new ActionListener() {
+				
+				@Override
+				public void actionPerformed(ActionEvent e) {
+					totale = CASSA_PANINOTECA.calcolaConto();
+					area.append(newLine);
+					area.append("Totale "+totale+ " Euro");
+					System.out.println(totale);
+					totale = 0;
+				}
+			});
+			JFrame frame = new JFrame("Pizzeria");
+			frame.setSize(500, 500);
+			frame.setDefaultCloseOperation(JFrame.EXIT_ON_CLOSE);
+			frame.setJMenuBar(jMenuBar);
+			frame.add(calcolaButton,BorderLayout .SOUTH);
+			frame.add(area,BorderLayout .CENTER);
+			frame.setVisible(true);
+		}
+
+	private static void inserisciJMenuteItemQuantità() {
+		for (int i = 1; i < 5; i++) {
+			JMenuItem jMenuItem = new JMenuItem(i+"x");
+			jMenuteItemsQuantità.add(jMenuItem);
+		}
+	}
+
+	private static void impostaMenuQuantità(JMenu menu) {
+		for (int i = 0; i < 4; i++) {
+			menu.add(jMenuteItemsQuantità.get(i));
+		}
+	}
+
+	private static void selezionaMenuQuantità(final int i) {
+		jMenuteItemsQuantità.get(i).addActionListener(new ActionListener() {
+		@Override
+		public void actionPerformed(ActionEvent e) {
+			quantità = i+1;
+		}
+});
+	}
+
+	private static void impostaMenuPizze(JMenu menu2) {
+		for (int i = 0; i < jMenuItemsPanini.size(); i++) {
+			menu2.add(jMenuItemsPanini.get(i));
+		}
+	}
+
+	private static void inserisciJMenuItemPizze() {
+		for (int i = 0; i < pizzeria.getListaPizze().size(); i++) {
+			JMenuItem jMenuItem = new JMenuItem(pizzeria.getListaPizze().get(i).toString());
+			jMenuItemsPanini.add(jMenuItem);
+		}
+	}
+
+	
+		
+}

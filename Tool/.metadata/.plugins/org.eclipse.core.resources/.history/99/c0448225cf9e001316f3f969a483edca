@@ -1,0 +1,34 @@
+package utils;
+
+import java.util.ArrayList;
+import java.util.StringTokenizer;
+
+public class InterpreteFileLog {
+
+	
+	public void fileTolog(ArrayList<String> list){
+		for (int i = 0; i < list.size(); i++) {
+			int index = 0;
+			String testo = "";
+			StringTokenizer tokenizer = new StringTokenizer(list.get(i));
+			while(tokenizer.hasMoreElements()){
+				if(index>0){
+					testo+=tokenizer.nextElement()+" ";
+				}else{
+				String string =	tokenizer.nextElement().toString();
+				String[] stringSplit = string.split("\\(");
+				String uno = stringSplit[0];
+				String due = stringSplit[1].replace(")", "");
+				String[] ciao = due.split(":");
+				String ora = ciao[0];
+				String minuti = ciao[1];
+				String secondi = ciao[2];
+				System.out.println(uno+ora+minuti+secondi);
+				}
+				index++;
+			}
+			
+			System.out.println(testo);
+		}
+	}
+}

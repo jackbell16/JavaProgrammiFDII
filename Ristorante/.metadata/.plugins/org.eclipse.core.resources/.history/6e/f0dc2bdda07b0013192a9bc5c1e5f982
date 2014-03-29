@@ -1,0 +1,78 @@
+/**
+ * Questa classe contiene i metodi per aggiungere un determinato prodotto al conto, ed effettuarne 
+ * il relativo conto
+ * @author Giacomo
+ */
+package utils;
+
+import java.util.ArrayList;
+
+public class CassaPaninoteca {
+	private static double costoMenuFisso = 8;
+	public ArrayList<ProdottoPaninoteca> paniniMangiati = new ArrayList<ProdottoPaninoteca>();
+	public ArrayList<ProdottoPaninoteca> bibitaBevute = new ArrayList<ProdottoPaninoteca>();
+	public double totale;
+	/**
+	 * Questo metodo permette di calcolare il conto
+	 * Qualora fosse applicabile il Menu a prezzo Fisso, 
+	 * il calcolo viene effettuato
+	 * @return
+	 */
+	public double calcolaConto(){
+		totale=0;
+		if(verificaMenuPrezzoFisso()){
+			applicaMenuPrezzoFisso();
+		}else{
+			calcolaPrezzoPanini();
+			calcolaPrezzoBibite();
+		}
+		paniniMangiati.clear();
+		bibitaBevute.clear();
+		return totale;
+	}
+	/**
+	 * Permette di aggiungere un panino al conto
+	 * @param panino
+	 * @param quantità
+	 */
+	public void aggiungiPanini(ProdottoPaninoteca panino, int quantità){
+		for (int i = 0; i < quantità; i++) {
+			paniniMangiati.add(panino);
+		}
+	}
+	/**
+	 * Permette di aggiungere una bibita al conto
+	 * @param bibita
+	 * @param quantità
+	 */
+	public void aggiungiBibite(ProdottoPaninoteca bibita, int quantità){
+		for (int i = 0; i < quantità; i++) {
+			bibitaBevute.add(bibita);
+		}
+	}
+	
+	private void calcolaPrezzoPanini(){
+		for (int i = 0; i < paniniMangiati.size(); i++) {
+			totale+=paniniMangiati.get(i).getPrezzo();
+		}
+	}
+	
+	private void calcolaPrezzoBibite(){
+		for (int i = 0; i < bibitaBevute.size(); i++) {
+			totale+=bibitaBevute.get(i).getPrezzo();
+		}
+	}
+	private void applicaMenuPrezzoFisso(){
+		totale = costoMenuFisso;
+	}
+	
+	private boolean verificaMenuPrezzoFisso(){
+		int numeroPanini = 1;
+		int numeroBibite = 1;
+		if(paniniMangiati.size()==numeroPanini && bibitaBevute.size()==numeroBibite){
+			return true;
+		}else{
+			return false;
+		}
+	}	
+}	

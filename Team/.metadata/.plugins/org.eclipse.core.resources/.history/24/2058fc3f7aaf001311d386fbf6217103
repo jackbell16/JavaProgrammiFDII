@@ -1,0 +1,71 @@
+package utils.report;
+
+import java.util.ArrayList;
+
+import utils.log.Attivita;
+import utils.log.Dipendente;
+import utils.log.InterpreteFileLog;
+
+public class GeneraReportConsole implements GeneraReport {
+	
+	private InterpreteFileLog fileLog;
+
+	public GeneraReportConsole(InterpreteFileLog fileLog) {
+		super();
+		this.fileLog = fileLog;
+	}
+
+	public InterpreteFileLog getFileLog() {
+		return fileLog;
+	}
+
+	public void setFileLog(InterpreteFileLog fileLog) {
+		this.fileLog = fileLog;
+	}
+	
+	@Override
+	public void creaReport() {
+		ArrayList<Dipendente> dipendenti = new ArrayList<>();
+		for (int i = 0; i < fileLog.getLogs().size(); i++) {
+			Dipendente dipendente = fileLog.getLogs().get(i).getDipendente();
+			if(!dipendente.isPresente(dipendenti)){
+				dipendenti.add(dipendente);
+			}
+		}
+		for (int i = 0; i < fileLog.getLogs().size(); i++) {
+			for (int j = 0; j < dipendenti.size(); j++) {
+				Dipendente dipendente = fileLog.getLogs().get(i).getDipendente();
+				Dipendente dipendente2 = dipendenti.get(j);
+				if(dipendente.stessoDipendente(dipendente2)){
+					dipendente2.aggiungiAttivita(fileLog.getLogs().get(i).getAttivita());
+				}
+			}
+		}
+		
+		for (int i = 0; i < dipendenti.size(); i++) {
+			Dipendente dipendente = dipendenti.get(i);
+			for (int j = 0; j < dipendente.getAttivita().size(); j++) {
+				System.out.println(dipendente+" "+dipendente.getAttivita().get(j));
+			}
+		}
+		for (int i = 0; i < dipendenti.size(); i++) {
+			Dipendente dipendente = dipendenti.get(i);
+			for (int j = 0; j < dipendente.getAttivita().size(); j++) {
+				for (int k = 0; k < dipendente.getAttivita().size() ; k++) {
+				Attivita attivita = dipendente.getAttivita().get(j);
+				Attivita attivita2 = dipendente.getAttivita().get(k);
+					if(attivita.stessaAttivita(attivita2)){
+						attivita.sommaOre(attivita2.getOre());
+						dipendente.getAttivita().remove(k);
+					}
+				}	
+			}
+		}
+	}
+	
+	@Override
+	public ArrayList<String> getReport() {
+		// TODO Auto-generated method stub
+		return null;
+	}
+}

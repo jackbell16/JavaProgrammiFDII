@@ -1,0 +1,26 @@
+package utils;
+
+public class Pizza implements Prodotto {
+	private String nomePizza;
+	private double prezzo;
+	@Override
+	public String getNome() {
+		// TODO Auto-generated method stub
+		return null;
+	}
+	@Override
+	public void setNome(String nomeProdotto) {
+		// TODO Auto-generated method stub
+		
+	}
+	@Override
+	public double getPrezzo() {
+		// TODO Auto-generated method stub
+		return 0;
+	}
+	@Override
+	public void setPrezzo(double prezzo) {
+		// TODO Auto-generated method stub
+		
+	}
+}

@@ -1,0 +1,14 @@
+package gui.user;
+
+import javax.swing.JFrame;
+
+public class ToolMain {
+	public static void main(String[] args) {
+		ToolMenu toolMenu = new ToolMenu();
+		JFrame frame = new JFrame("Tool");
+		frame.setSize(500, 500);
+		frame.setDefaultCloseOperation(JFrame.EXIT_ON_CLOSE);
+		frame.setJMenuBar(toolMenu);
+		frame.setVisible(true);
+	}
+}

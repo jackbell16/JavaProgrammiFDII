@@ -1,0 +1,16 @@
+package tests;
+
+import utils.CaricamentoFile;
+import filtri.utils.Errore;
+
+public class Tests03 {
+	public static void main(String[] args) {
+		CaricamentoFile file = new CaricamentoFile();
+		file.setNomeFile("prova.txt");
+		Errore errore = new errore();
+		info.filtra(file.getList());
+		for (int i = 0; i < errore.getRisultato().size(); i++) {
+			System.out.println(errore.getRisultato().get(i));
+		}
+	}
+}

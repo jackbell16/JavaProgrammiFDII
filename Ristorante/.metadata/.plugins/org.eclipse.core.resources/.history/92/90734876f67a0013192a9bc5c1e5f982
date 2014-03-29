@@ -1,0 +1,16 @@
+package utils;
+
+public class MenuPrezzoFissoTest implements MenuPrezzoFisso {
+	
+	public void applicaMenuPrezzoFisso(){
+		totale = costoMenuFisso;
+	}
+	
+	public verificaMenuPrezzoFisso(int numeroPanini,int numeroBibite){
+		if(numeroPanini==1 && numeroBibite==1){
+			return true;
+		}else{
+			return false;
+		}
+	}	
+}

@@ -1,0 +1,25 @@
+/**
+ * Questa classe ha la responsabilità di contenere tutte le portate disponibile in un
+ * ristorante Cinese
+ * @author Giacomo
+ */
+package utils;
+
+import java.util.ArrayList;
+
+public class RistoranteCinese {
+	
+	private ArrayList<ProdottoCinese> portate = new  ArrayList<ProdottoCinese>();
+
+	public ArrayList<ProdottoCinese> getPortate() {
+		return portate;
+	}
+
+	public void setPortate(ArrayList<ProdottoCinese> portate) {
+		this.portate = portate;
+	}
+	
+	public void aggiungiProdottoCinese(ProdottoCinese prodottoCinese){
+		portate.add(prodottoCinese);
+	}
+}

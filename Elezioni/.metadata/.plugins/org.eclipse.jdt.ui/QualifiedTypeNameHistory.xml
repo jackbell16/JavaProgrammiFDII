@@ -1,0 +1,16 @@
+<?xml version="1.0" encoding="UTF-8" standalone="no"?>
+<qualifiedTypeNameHistroy>
+<fullyQualifiedTypeName name="java.io.BufferedReader"/>
+<fullyQualifiedTypeName name="java.io.FileReader"/>
+<fullyQualifiedTypeName name="utils.CaricamentoFile"/>
+<fullyQualifiedTypeName name="java.util.StringTokenizer"/>
+<fullyQualifiedTypeName name="java.lang.Integer"/>
+<fullyQualifiedTypeName name="java.lang.Override"/>
+<fullyQualifiedTypeName name="java.util.Random"/>
+<fullyQualifiedTypeName name="utils.Seggio"/>
+<fullyQualifiedTypeName name="utils.Cittadino"/>
+<fullyQualifiedTypeName name="utils.Quartiere"/>
+<fullyQualifiedTypeName name="utils.InterpetreInfoCittadino"/>
+<fullyQualifiedTypeName name="java.util.ArrayList"/>
+<fullyQualifiedTypeName name="utils.InterpreteInfoCittadinoDiTest"/>
+</qualifiedTypeNameHistroy>

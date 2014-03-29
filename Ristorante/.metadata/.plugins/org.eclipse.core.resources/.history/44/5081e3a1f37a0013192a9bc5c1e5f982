@@ -1,0 +1,37 @@
+/**
+ * Questa classe ha la reponsabilità di contenere le proprietà dell'oggetto bibita
+ * @author Giacomo
+ */
+package utils;
+
+public class Pizza {
+	
+	private String nomePizza;
+	private double prezzo;
+	
+	public Pizza(String nomePizza, double prezzo) {
+		super();
+		this.nomePizza = nomePizza;
+		this.prezzo = prezzo;
+	}
+	
+	public String getNomePizza() {
+		return nomePizza;
+	}
+	
+	public void setNomePizza(String nomePizza) {
+		this.nomePizza = nomePizza;
+	}
+	
+	public double getPrezzo() {
+		return prezzo;
+	}
+	
+	public void setPrezzo(int prezzo) {
+		this.prezzo = prezzo;
+	}
+	@Override
+	public String toString(){
+		return getNomePizza()+" "+getPrezzo()+" Euro";
+	}
+}

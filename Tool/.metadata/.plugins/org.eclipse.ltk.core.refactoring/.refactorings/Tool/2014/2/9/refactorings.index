@@ -1,0 +1,10 @@
+1393492039458	Rename type 'Eventi'
+1393494032736	Extract method 'setJMenuItem'
+1393495642602	Rename local variable 'ciao'
+1393497406347	Delete element
+1393497524516	Extract method 'azioneApriFile'
+1393498003491	Delete element
+1393498017087	Rename type 'Tests04'
+1393498230905	Rename type 'InterpreteFileLog'
+1393498257014	Extract interface 'InterpreteFileLog'
+1393498531138	Extract method 'cercaLogTipo'

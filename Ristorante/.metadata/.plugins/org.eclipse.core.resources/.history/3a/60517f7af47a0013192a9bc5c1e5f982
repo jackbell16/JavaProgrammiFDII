@@ -1,0 +1,21 @@
+package utils;
+
+import java.util.ArrayList;
+
+public class RistoranteCinese {
+	private ArrayList<Portata> portate = new  ArrayList<>();
+
+	public RistoranteCinese(ArrayList<Portata> portate) {
+		super();
+		this.portate = portate;
+	}
+
+	public ArrayList<Portata> getPortate() {
+		return portate;
+	}
+
+	public void setPortate(ArrayList<Portata> portate) {
+		this.portate = portate;
+	}
+	
+}

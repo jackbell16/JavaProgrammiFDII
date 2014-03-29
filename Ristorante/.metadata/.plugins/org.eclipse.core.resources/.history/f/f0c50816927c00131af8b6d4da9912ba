@@ -1,0 +1,23 @@
+package tests;
+
+import utils.Cassa;
+import utils.Pizza;
+import utils.ProxyCassa;
+import utils.RistorantePizzeria;
+
+public class Tests01 {
+	public static void main(String[] args) {
+		ProxyCassa proxyCassa = new ProxyCassa(1);
+		RistorantePizzeria pizzeria = new RistorantePizzeria("Pizzeria");
+		Pizza pizza = new Pizza("Margherita",4);
+		Pizza pizza2 = new Pizza("Napoli", 5);
+		Pizza pizza3 = new Pizza("Americana", 6.50);
+		Cassa cassa = new Cassa();
+		cassa.aggiungiProdotti(pizza, 3);
+		cassa.aggiungiProdotti(pizza2, 1);
+		cassa.aggiungiProdotti(pizza3, 2);
+		System.out.println(cassa.calcolaConto());
+		cassa.aggiungiProdotti(pizza3, 2);
+		System.out.println(cassa.calcolaConto());
+	}
+}

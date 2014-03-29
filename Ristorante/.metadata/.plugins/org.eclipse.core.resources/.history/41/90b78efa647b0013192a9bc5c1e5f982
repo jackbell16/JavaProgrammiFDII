@@ -1,0 +1,27 @@
+package utils;
+
+import java.util.ArrayList;
+
+public class CassaPizzeria {
+	private ArrayList<Pizza> conto = new ArrayList<>();
+	
+	public ArrayList<Pizza> getConto() {
+		return conto;
+	}
+	public void setConto(ArrayList<Pizza> conto) {
+		this.conto = conto;
+	}
+	public double calcolaConto(){
+		double totale = 0;
+		for (int i = 0; i < conto.size(); i++) {
+			totale+=conto.get(i).getPrezzo();
+		}
+		conto.clear();
+		return totale;
+	}
+	public void aggiungiProdotti(Pizza pizza, int quantità){
+		for (int i = 0; i < quantità; i++) {
+			conto.add(pizza);
+		}
+	}	
+}

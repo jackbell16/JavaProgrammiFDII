@@ -1,0 +1,33 @@
+package utils.log;
+
+public class Log {
+	
+	private Dipendente dipendente;
+	private Attivita attivita;
+	private Data data;
+	
+	public Log(Dipendente dipendente, Attivita attivita, Data data) {
+		super();
+		this.dipendente = dipendente;
+		this.attivita = attivita;
+		this.data = data;
+	}
+	public Dipendente getDipendente() {
+		return dipendente;
+	}
+	public void setDipendente(Dipendente dipendente) {
+		this.dipendente = dipendente;
+	}
+	public Attivita getAttivita() {
+		return attivita;
+	}
+	public void setAttivita(Attivita attivita) {
+		this.attivita = attivita;
+	}
+	public Data getData() {
+		return data;
+	}
+	public void setData(Data data) {
+		this.data = data;
+	}
+}

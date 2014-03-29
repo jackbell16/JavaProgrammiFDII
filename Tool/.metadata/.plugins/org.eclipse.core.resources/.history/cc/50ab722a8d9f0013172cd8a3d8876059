@@ -1,0 +1,9 @@
+package filtri.utils;
+
+import java.util.ArrayList;
+
+public interface Filtro {
+	
+	public ArrayList<Log> filtra (ArrayList<String> list);
+
+}

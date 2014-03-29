@@ -1,0 +1,25 @@
+package utils;
+
+import java.util.ArrayList;
+
+public class Quartiere {
+	private String ID;
+	private ArrayList<Cittadino> cittadini;
+	public Quartiere(String iD, ArrayList<Cittadino> cittadini) {
+		super();
+		ID = iD;
+		this.cittadini = cittadini;
+	}
+	public String getID() {
+		return ID;
+	}
+	public void setID(String iD) {
+		ID = iD;
+	}
+	public ArrayList<Cittadino> getCittadini() {
+		return cittadini;
+	}
+	public void setCittadini(ArrayList<Cittadino> cittadini) {
+		this.cittadini = cittadini;
+	}
+}

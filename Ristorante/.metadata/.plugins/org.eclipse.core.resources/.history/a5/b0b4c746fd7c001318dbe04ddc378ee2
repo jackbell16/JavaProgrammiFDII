@@ -1,0 +1,16 @@
+package panel;
+
+import utils.Pizza;
+import utils.RistorantePizzeria;
+
+public class ImpostaProdottiTest {
+	final RistorantePizzeria pizzeria = new RistorantePizzeria("Bella Napoli");
+	Pizza pizza = new Pizza("Margherita",4);
+	Pizza pizza2 = new Pizza("Napoli", 5);
+	Pizza pizza3 = new Pizza("Americana", 6.50);
+	public static void main(String[] args) {
+	pizzeria.aggiungiProdotto(pizza);
+	pizzeria.aggiungiProdotto(pizza2);
+	pizzeria.aggiungiProdotto(pizza3);
+	}
+}

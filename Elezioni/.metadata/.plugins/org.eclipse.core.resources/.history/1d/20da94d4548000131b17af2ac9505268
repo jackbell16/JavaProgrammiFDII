@@ -1,0 +1,27 @@
+package utils;
+
+import java.util.ArrayList;
+import java.util.Random;
+
+public class Seggio {
+	private static int numeroScrutinatori;
+	public ArrayList<Cittadino> estrazioneCittadini(ArrayList<Cittadino> cittadini){
+		ArrayList<Cittadino> scrutinatoriPossibili = cittadini;
+		ArrayList<Cittadino> scrutinatori = scrutinatoriPossibili;
+		for (int i = 0; i < numeroScrutinatori; i++) {
+			int index = scegliNumero(scrutinatoriPossibili.size());
+			Cittadino cittadino = scrutinatoriPossibili.get(index);
+			scrutinatori.add(cittadino);
+			scrutinatoriPossibili.remove(index);
+		}
+		return scrutinatori;
+	}
+	
+	public int scegliNumero(int massimoNumero){
+		int numero = 0;
+		Random random = new Random();
+		numero = random.nextInt(massimoNumero);
+		return numero; 
+	}
+}
+

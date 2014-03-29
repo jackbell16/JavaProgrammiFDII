@@ -1,0 +1,27 @@
+package utils;
+
+public class Portata {
+	private String nomePortata;
+	private double prezzo;
+	public Portata(String nomePortata, double prezzo) {
+		super();
+		this.nomePortata = nomePortata;
+		this.prezzo = prezzo;
+	}
+	public String getNomePortata() {
+		return nomePortata;
+	}
+	public void setNomePortata(String nomePortata) {
+		this.nomePortata = nomePortata;
+	}
+	public double getPrezzo() {
+		return prezzo;
+	}
+	public void setPrezzo(double prezzo) {
+		this.prezzo = prezzo;
+	}
+	@Override
+	public String toString(){
+		return getNomePortata()+" "+getPrezzo()+" Euro ";
+	}
+}

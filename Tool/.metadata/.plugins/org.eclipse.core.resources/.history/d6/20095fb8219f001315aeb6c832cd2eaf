@@ -1,0 +1,24 @@
+package filtri.utils;
+
+import java.util.ArrayList;
+
+import utils.InterpreteFileLog;
+
+public class Info implements Filtro {
+	
+	private String tipoLog = "info";
+	private ArrayList<Log> risultato = new ArrayList<>();
+
+	@Override
+	public ArrayList<Log> filtra(ArrayList<String> list) {
+		InterpreteFileLog interpreteFileLog = new InterpreteFileLog();
+		interpreteFileLog.fileTolog(list);
+		for (int i = 0; i < interpreteFileLog.getLogs().size(); i++) {
+			if(interpreteFileLog.getLogs().get(i).equals(tipoLog)){
+				risultato.add(interpreteFileLog.getLogs().get(i));
+			}
+		}
+		
+		return interpreteFileLog.getLogs();
+	}
+}

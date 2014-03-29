@@ -1,0 +1,16 @@
+package utils;
+
+import java.util.ArrayList;
+
+public class MenuPrezzoFisso {
+	public ArrayList<ProdottoPaninoteca> paniniMangiati;
+	public ArrayList<ProdottoPaninoteca> bibitaBevute;
+	public double totale;
+
+	public MenuPrezzoFisso(ArrayList<Object> arrayList,
+			ArrayList<Object> arrayList2, double totale) {
+		this.paniniMangiati = arrayList;
+		this.bibitaBevute = arrayList2;
+		this.totale = totale;
+	}
+}

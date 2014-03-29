@@ -1,0 +1,27 @@
+package tests;
+
+import java.util.ArrayList;
+import java.util.Random;
+
+import utils.CaricamentoFile;
+import utils.Cittadino;
+import utils.InterpreteInfoCittadinoDiTest;
+import utils.Quartiere;
+import utils.Seggio;
+
+public class Tests02 {
+	public static void main(String[] args) {
+		CaricamentoFile caricamentoFile = new CaricamentoFile();
+		caricamentoFile.setFileName("prova.txt");
+		for (int i = 0; i < caricamentoFile.getList().size(); i++) {
+			System.out.println(caricamentoFile.getList().get(i));
+		}
+		InterpreteInfoCittadinoDiTest test = new InterpreteInfoCittadinoDiTest();
+		ArrayList<Cittadino> cittadini = test.listaCittadini(caricamentoFile.getList());
+		Seggio seggio = new Seggio();
+		seggio.estrazioneCittadini(cittadini);
+		for (int i = 0; i < seggio.getScrutinatori().size(); i++) {
+			System.out.println(seggio.getScrutinatori().get(i));
+		}
+	}	
+}

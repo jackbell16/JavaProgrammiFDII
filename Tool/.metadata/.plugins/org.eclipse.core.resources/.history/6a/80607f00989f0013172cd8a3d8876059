@@ -1,0 +1,69 @@
+package gui.user;
+
+import java.awt.event.ActionEvent;
+import java.awt.event.ActionListener;
+import java.io.File;
+import java.util.ArrayList;
+
+import javax.swing.JFileChooser;
+import javax.swing.JMenu;
+import javax.swing.JMenuBar;
+import javax.swing.JMenuItem;
+import javax.swing.plaf.FileChooserUI;
+
+import utils.CaricamentoFile;
+import filtri.utils.Errore;
+import filtri.utils.Evento;
+import filtri.utils.Filtro;
+import filtri.utils.Info;
+import filtri.utils.ProxyFiltro;
+
+public class ToolMenu extends JMenuBar {
+	
+	private ProxyFiltro proxyFiltro;
+	private Errore errore = new Errore();
+	private static Evento evento = new Evento();
+	private Info info = new Info();
+	private ArrayList<String> list;
+	
+	public ToolMenu(final ProxyFiltro proxyFiltro){
+		this.proxyFiltro = proxyFiltro;
+		JMenu menu = new JMenu("File");
+		JMenuItem item = new JMenuItem("Apri file");
+		item.addActionListener(new ActionListener() {
+			
+			@Override
+			public void actionPerformed(ActionEvent e) {
+				CaricamentoFile caricamentoFile = new CaricamentoFile();
+				caricamentoFile.setNomeFile("prova.txt");
+				list = new ArrayList<>();
+				list.clear();
+				list = caricamentoFile.getList();
+				}
+		});
+		menu.add(item);
+		JMenu menu2 = new JMenu("Filtra Log");
+		JMenuItem item2 = new JMenuItem("Evento");
+		JMenuItem item3 = new JMenuItem("Errore");
+		JMenuItem item4 = new JMenuItem("Info");
+		setJMenuItem(item2, evento);
+		setJMenuItem(item3, errore);
+		setJMenuItem(item4, info);
+		menu2.add(item2);
+		menu2.add(item3);
+		menu2.add(item4);
+		add(menu);
+		add(menu2);
+	}
+
+	private void setJMenuItem(JMenuItem item2, final Filtro filtro) {
+		item2.addActionListener(new ActionListener() {
+			@Override
+			public void actionPerformed(ActionEvent e) {
+				proxyFiltro.setFiltro(filtro);
+				proxyFiltro.filtra(list);
+				proxyFiltro.update();
+			}
+		});
+	}
+}

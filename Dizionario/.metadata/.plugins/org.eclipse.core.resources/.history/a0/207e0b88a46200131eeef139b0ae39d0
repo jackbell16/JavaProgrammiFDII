@@ -1,0 +1,19 @@
+package utils;
+
+import java.util.HashMap;
+
+public class DizionarioEsempio extends Dizionario {
+	public DizionarioEsempio(){}
+	public void setCorrispondenza(HashMap<String, String> corrispondenza,String string) {
+		CaricaDizionario.setFileName(string);
+		for (int i = 0; i < CaricaDizionario.list.size(); i++) {
+			String[] arr = CaricaDizionario.list.get(i).split(separatoreParole);
+			String parolaOriginale = arr[0]; 
+			String parolaTradotta = arr[1];
+			String[] strings = CaricaDizionario.list.get(i).split(sepratoreFrase);
+			String frase = strings[1];
+			corrispondenzaParola.put(parolaOriginale, parolaTradotta);
+			corrispondenzaFrase.put(parolaTradotta, frase);
+		}
+	}
+}

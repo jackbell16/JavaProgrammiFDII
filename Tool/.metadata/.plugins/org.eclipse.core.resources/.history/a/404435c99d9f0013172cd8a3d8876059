@@ -1,0 +1,22 @@
+package filtri.utils;
+
+import java.util.ArrayList;
+
+import utils.InterpreteFileLog;
+import utils.InterpreteFileLogTest;
+
+public class StrumentiFiltro {
+	
+	public void cercaLogTipo(ArrayList<String> list) {
+		InterpreteFileLog fileLog = new InterpreteFileLogTest();
+		fileLog.fileTolog(list);
+		ArrayList<Log> risultato = new ArrayList<>();
+		for (int i = 0; i < fileLog.getLogs().size(); i++) {
+			Log log = fileLog.getLogs().get(i);
+			if(log.isTypeOf(tipoLog)){
+				risultato.add(log);
+			}
+		}
+	}
+
+}

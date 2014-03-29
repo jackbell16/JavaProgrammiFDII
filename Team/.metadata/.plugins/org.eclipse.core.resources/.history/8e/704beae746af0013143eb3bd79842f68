@@ -1,0 +1,28 @@
+/**
+ * Questa classe astrae sul concetto di Attività
+ */
+package utils.log;
+
+public class Attivita {
+	
+	private int ore;
+	private String nome;
+	
+	public Attivita(int ora, String nome) {
+		super();
+		this.ore = ora;
+		this.nome = nome;
+	}
+	public int getOra() {
+		return ore;
+	}
+	public void setOra(int ora) {
+		this.ore = ora;
+	}
+	public String getNome() {
+		return nome;
+	}
+	public void setNome(String nome) {
+		this.nome = nome;
+	}
+}

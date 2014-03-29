@@ -1,0 +1,15 @@
+package utils;
+
+import java.util.ArrayList;
+
+public interface ICassa {
+	
+	public ArrayList<Prodotto> getConto();
+	
+	public void setConto(ArrayList<Prodotto> conto);
+	
+	public double calcolaConto();
+	
+	public void aggiungiProdotti(Prodotto prodotto, int quantità);
+
+}

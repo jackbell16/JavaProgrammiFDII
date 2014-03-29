@@ -1,0 +1,35 @@
+/**
+ * Questa classe ha la reponsabilità di contenere le proprietà dell'oggetto Panino
+ * @author Giacomo
+ */
+package utils;
+
+public class Panino implements ProdottoPaninoteca  {
+	private String nomePanino;
+	private double prezzo;
+	public Panino(String nomePanino, double prezzo) {
+		super();
+		this.nomePanino = nomePanino;
+		this.prezzo = prezzo;
+	}
+	@Override
+	public String getNome() {
+		// TODO Auto-generated method stub
+		return null;
+	}
+	@Override
+	public double getPrezzo() {
+		
+		return 0;
+	}
+	@Override
+	public void setNome(String nomeProdotto) {
+		// TODO Auto-generated method stub
+		
+	}
+	@Override
+	public void setPrezzo(double prezzo) {
+		// TODO Auto-generated method stub
+		
+	}
+}

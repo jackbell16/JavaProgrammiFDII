@@ -1,0 +1,50 @@
+package utils.report;
+
+import java.util.ArrayList;
+
+import utils.log.Dipendente;
+import utils.log.InterpreteFileLog;
+
+public class GeneraReportConsole implements GeneraReport {
+	
+	private InterpreteFileLog fileLog;
+
+	public GeneraReportConsole(InterpreteFileLog fileLog) {
+		super();
+		this.fileLog = fileLog;
+	}
+
+	public InterpreteFileLog getFileLog() {
+		return fileLog;
+	}
+
+	public void setFileLog(InterpreteFileLog fileLog) {
+		this.fileLog = fileLog;
+	}
+	
+	@Override
+	public void creaReport() {
+		ArrayList<Dipendente> dipendenti = new ArrayList<>();
+		for (int i = 0; i < fileLog.getLogs().size(); i++) {
+			for (int j = 0; j < fileLog.getLogs().size(); j++) {
+				Dipendente dipendente = fileLog.getLogs().get(i).getDipendente();
+				Dipendente dipendente2 = fileLog.getLogs().get(j).getDipendente();
+				if(dipendente.stessoDipendente(dipendente2)){
+					dipendente.aggiungiAttivita(fileLog.getLogs().get(i).getAttivita());
+					fileLog.getLogs().remove(j);
+				}else{
+					dipendenti.add(dipendente2);
+				}
+			}
+		}
+		for (int i = 0; i < dipendenti.size(); i++) {
+			System.out.println(dipendenti.get(i));
+		}
+	}
+	
+	@Override
+	public ArrayList<String> getReport() {
+		// TODO Auto-generated method stub
+		return null;
+	}
+}

@@ -1,0 +1,40 @@
+<?xml version="1.0" encoding="UTF-8" standalone="no"?>
+<qualifiedTypeNameHistroy>
+<fullyQualifiedTypeName name="java.io.BufferedReader"/>
+<fullyQualifiedTypeName name="java.io.File"/>
+<fullyQualifiedTypeName name="java.util.StringTokenizer"/>
+<fullyQualifiedTypeName name="filtri.utils.Log"/>
+<fullyQualifiedTypeName name="time.Orario"/>
+<fullyQualifiedTypeName name="java.lang.StrictMath"/>
+<fullyQualifiedTypeName name="java.io.ObjectInputStream.GetField"/>
+<fullyQualifiedTypeName name="java.lang.String"/>
+<fullyQualifiedTypeName name="java.lang.ArrayIndexOutOfBoundsException"/>
+<fullyQualifiedTypeName name="utils.InterpreteFileLog"/>
+<fullyQualifiedTypeName name="javax.swing.JMenuBar"/>
+<fullyQualifiedTypeName name="javax.swing.JMenu"/>
+<fullyQualifiedTypeName name="gui.user.ToolMain"/>
+<fullyQualifiedTypeName name="javax.swing.JFrame"/>
+<fullyQualifiedTypeName name="java.util.Observable"/>
+<fullyQualifiedTypeName name="java.lang.Override"/>
+<fullyQualifiedTypeName name="java.lang.reflect.Proxy"/>
+<fullyQualifiedTypeName name="filtri.utils.Errore"/>
+<fullyQualifiedTypeName name="filtri.utils.Evento"/>
+<fullyQualifiedTypeName name="filtri.utils.Info"/>
+<fullyQualifiedTypeName name="javax.swing.plaf.FileChooserUI"/>
+<fullyQualifiedTypeName name="gui.user.ToolMenu"/>
+<fullyQualifiedTypeName name="java.awt.event.ActionListener"/>
+<fullyQualifiedTypeName name="java.util.Observer"/>
+<fullyQualifiedTypeName name="javax.tools.Tool"/>
+<fullyQualifiedTypeName name="gui.user.ToolView"/>
+<fullyQualifiedTypeName name="javax.swing.JPanel"/>
+<fullyQualifiedTypeName name="java.awt.BorderLayout"/>
+<fullyQualifiedTypeName name="utils.CaricamentoFile"/>
+<fullyQualifiedTypeName name="javax.swing.JTextArea"/>
+<fullyQualifiedTypeName name="filtri.utils.Filtro"/>
+<fullyQualifiedTypeName name="javax.swing.JMenuItem"/>
+<fullyQualifiedTypeName name="filtri.utils.TuttiLogs"/>
+<fullyQualifiedTypeName name="filtri.utils.ProxyFiltro"/>
+<fullyQualifiedTypeName name="java.util.ArrayList"/>
+<fullyQualifiedTypeName name="filtri.utils.StrumentiFiltro"/>
+<fullyQualifiedTypeName name="java.lang.Object"/>
+</qualifiedTypeNameHistroy>

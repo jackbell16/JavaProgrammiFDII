@@ -1,0 +1,13 @@
+package utils;
+
+import javax.swing.JMenu;
+import javax.swing.JMenuBar;
+import javax.swing.JMenuItem;
+
+public class Menu {
+	public static Men setMenu(){
+		
+			
+		}
+	
+}

@@ -1,0 +1,41 @@
+<?xml version="1.0" encoding="UTF-8" standalone="no"?>
+<qualifiedTypeNameHistroy>
+<fullyQualifiedTypeName name="utils.ProdottiPaninoteca"/>
+<fullyQualifiedTypeName name="java.lang.Double"/>
+<fullyQualifiedTypeName name="javax.swing.BorderFactory"/>
+<fullyQualifiedTypeName name="utils.Articolo"/>
+<fullyQualifiedTypeName name="utils.ProdottoPizzeria"/>
+<fullyQualifiedTypeName name="utils.RistoranteCinese"/>
+<fullyQualifiedTypeName name="utils.ProdottoCinese"/>
+<fullyQualifiedTypeName name="userpanel.MenuPizzeria"/>
+<fullyQualifiedTypeName name="utils.Portata"/>
+<fullyQualifiedTypeName name="utils.Paninoteca"/>
+<fullyQualifiedTypeName name="utils.ProdottoPaninoteca"/>
+<fullyQualifiedTypeName name="java.lang.Object"/>
+<fullyQualifiedTypeName name="utils.Ristorante"/>
+<fullyQualifiedTypeName name="utils.Prodotto"/>
+<fullyQualifiedTypeName name="utils.CassaCinese"/>
+<fullyQualifiedTypeName name="utils.Pizza"/>
+<fullyQualifiedTypeName name="utils.CassaPizzeria"/>
+<fullyQualifiedTypeName name="utils.CassaPaninoteca"/>
+<fullyQualifiedTypeName name="utils.Panino"/>
+<fullyQualifiedTypeName name="utils.Bibita"/>
+<fullyQualifiedTypeName name="utils.MenuPrezzoFisso"/>
+<fullyQualifiedTypeName name="utils.MenuTuristico"/>
+<fullyQualifiedTypeName name="utils.ProxyCassa"/>
+<fullyQualifiedTypeName name="java.lang.Integer"/>
+<fullyQualifiedTypeName name="java.lang.Override"/>
+<fullyQualifiedTypeName name="javax.swing.JFrame"/>
+<fullyQualifiedTypeName name="javax.swing.JMenuBar"/>
+<fullyQualifiedTypeName name="javax.swing.JMenu"/>
+<fullyQualifiedTypeName name="panel.MenuPannello"/>
+<fullyQualifiedTypeName name="utils.RistorantePizzeria"/>
+<fullyQualifiedTypeName name="javax.swing.JMenuItem"/>
+<fullyQualifiedTypeName name="java.awt.event.ActionListener"/>
+<fullyQualifiedTypeName name="utils.ICassa"/>
+<fullyQualifiedTypeName name="utils.Cassa"/>
+<fullyQualifiedTypeName name="javax.swing.JTextArea"/>
+<fullyQualifiedTypeName name="java.awt.BorderLayout"/>
+<fullyQualifiedTypeName name="panel.ImpostaProdottiTest"/>
+<fullyQualifiedTypeName name="java.util.ArrayList"/>
+</qualifiedTypeNameHistroy>

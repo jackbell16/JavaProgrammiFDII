@@ -1,0 +1,14 @@
+/**
+ * Questo test ha lo scopo di verificare la corretta apertura di un file testuale
+ */
+package tests;
+
+import utils.CaricamentoFile;
+
+public class Tests01 {
+	public static void main(String[] args) {
+		CaricamentoFile caricamentoFile = new CaricamentoFile();
+		caricamentoFile.setNomeFile("prova.txt");
+	}
+
+}

@@ -1,0 +1,24 @@
+package tests;
+
+import java.util.ArrayList;
+
+import utils.CaricamentoFile;
+import utils.Cittadino;
+import utils.InterpreteInfoCittadinoDiTest;
+import utils.Quartiere;
+
+public class Tests02 {
+	public static void main(String[] args) {
+		CaricamentoFile caricamentoFile = new CaricamentoFile();
+		caricamentoFile.setFileName("prova.txt");
+		for (int i = 0; i < caricamentoFile.getList().size(); i++) {
+			System.out.println(caricamentoFile.getList().get(i));
+		}
+		InterpreteInfoCittadinoDiTest test = new InterpreteInfoCittadinoDiTest();
+		ArrayList<Cittadino> cittadini = test.listaCittadini(caricamentoFile.getList());
+		for (int i = 0; i < cittadini.size(); i++) {
+			System.out.println(cittadini.get(i));
+		}
+		Quartiere quartiere = new Quartiere("01", cittadini);
+	}	
+}

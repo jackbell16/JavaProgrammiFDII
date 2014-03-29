@@ -1,0 +1,23 @@
+/**
+ * Questa classe ha la responsabilità di contenere tutte le bibite e i paini disponibile in una 
+ * paninoteca
+ * @author Giacomo
+ */
+package utils;
+
+import java.util.ArrayList;
+
+public class Paninoteca {
+
+	private ArrayList<ProdottoPaninoteca> list = new ArrayList<>();
+	
+	public ArrayList<ProdottoPaninoteca> getList() {
+		return list;
+	}
+
+	public void setList(ArrayList<ProdottoPaninoteca> list) {
+		this.list = list;
+	}
+	
+	
+}

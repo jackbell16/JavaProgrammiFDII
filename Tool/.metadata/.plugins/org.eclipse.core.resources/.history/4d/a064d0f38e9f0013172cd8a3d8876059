@@ -1,0 +1,20 @@
+package filtri.utils;
+
+import java.util.ArrayList;
+
+public class Errore implements Filtro {
+	
+	private String tipoLog = "Errore";
+	private ArrayList<Log> risultato = new ArrayList<>();
+
+	@Override
+	public void filtra(ArrayList<String> list) {
+		// TODO Auto-generated method stub
+		
+	}
+	
+	@Override
+	public ArrayList<Log> getRisultato() {
+		return risultato;
+	}
+}

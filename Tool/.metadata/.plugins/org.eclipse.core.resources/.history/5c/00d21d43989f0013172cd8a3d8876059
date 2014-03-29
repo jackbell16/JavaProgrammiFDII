@@ -1,0 +1,35 @@
+package gui.user;
+
+import java.util.Observable;
+import java.util.Observer;
+
+import javax.swing.JPanel;
+import javax.swing.JTextArea;
+
+import filtri.utils.ProxyFiltro;
+
+public class ToolView extends JPanel implements Observer {
+	
+	private JTextArea area;
+	private ProxyFiltro proxyFiltro = new ProxyFiltro();
+	private String newline = "\n";
+	
+	
+	public ToolView(ProxyFiltro proxyFiltro) {
+		super();
+		this.proxyFiltro = proxyFiltro;
+		proxyFiltro.addObserver(this);
+		area = new JTextArea();
+		add(area);
+	}
+
+	@Override
+	public void update(Observable o, Object arg) {
+		area.setText("");
+		for (int i = 0; i < proxyFiltro.getRisultato().size(); i++) {
+			System.out.println(proxyFiltro.getRisultato().size());
+			area.append(proxyFiltro.getRisultato().get(i).toString());
+			area.append(newline);
+		}
+	}
+}

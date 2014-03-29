@@ -1,0 +1,10 @@
+/**
+ * Questa classe ha lo scopo di caricare il dizionario scelto dall'utente
+ */
+package utils;
+
+import java.io.File;
+
+public class CaricamentoDizionario {
+	
+}

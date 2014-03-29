@@ -1,0 +1,42 @@
+package tests;
+
+import java.io.BufferedReader;
+import java.io.File;
+import java.io.FileNotFoundException;
+import java.io.FileReader;
+import java.io.IOException;
+
+import utils.Dizionario;
+
+public class Test {
+	public static void main(String[] args) {
+		
+		Dizionario dizionario = new Dizionario();
+		dizionario.setCorrispondenza(Dizionario.corrispondenza, "ciao","hello");
+		System.out.println(dizionario.getCorrispondenza().get("ciao"));
+		private static BufferedReader reader;
+
+		public static void carica(String string){
+			try {
+				reader = new BufferedReader(new FileReader(new File(string)));
+				
+				String line=reader.readLine();
+				
+				while(line!=null){
+					
+					//String f = null;
+					
+					System.out.println(line);
+					
+					line=reader.readLine();
+				}
+			} catch (FileNotFoundException e) {
+				e.printStackTrace();
+			} catch (IOException e) {
+				e.printStackTrace();
+			}
+		}
+	}
+	
+
+}

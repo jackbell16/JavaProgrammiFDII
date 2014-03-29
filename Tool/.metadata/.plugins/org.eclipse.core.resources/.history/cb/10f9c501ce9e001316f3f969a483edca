@@ -1,0 +1,32 @@
+package tests;
+
+import java.util.StringTokenizer;
+
+import utils.CaricamentoFile;
+
+public class Tests02 {
+	public static void main(String[] args) {
+		CaricamentoFile caricamentoFile = new CaricamentoFile();
+		caricamentoFile.setNomeFile("/Users/Giacomo/Desktop/Tool/Tool/prova.txt");
+		for (int i = 0; i < caricamentoFile.getList().size(); i++) {
+			int index = 0;
+			String testo = "";
+			StringTokenizer tokenizer = new StringTokenizer(caricamentoFile.getList().get(i));
+			while(tokenizer.hasMoreElements()){
+				if(index>0){
+					testo+=tokenizer.nextElement()+" ";
+				}else{
+				String string =	tokenizer.nextElement().toString();
+				String[] stringSplit = string.split("\\(");
+				String uno = stringSplit[0];
+				String due = stringSplit[1];
+				due.replace("\\)", " ");
+				System.out.println(uno+due);
+				}
+				index++;
+			}
+			
+			System.out.println(testo);
+		}
+	}
+}

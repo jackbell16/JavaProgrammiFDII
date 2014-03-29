@@ -1,0 +1,14 @@
+/**
+ * Questa classe ha il compito di verificare il corretto funzionamento
+ * della cassa del ristarante Cinese
+ */
+package tests;
+
+import utils.Portata;
+
+public class Tests03 {
+	public static void main(String[] args) {
+		Portata portata = new Portata("Riso", 3);
+		Portata portata2 = new Portata("Patatine", 5, true);
+	}
+}

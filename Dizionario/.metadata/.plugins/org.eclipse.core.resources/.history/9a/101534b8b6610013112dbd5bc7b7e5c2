@@ -1,0 +1,25 @@
+package utils;
+
+import java.io.BufferedReader;
+import java.io.FileNotFoundException;
+import java.io.FileReader;
+import java.io.IOException;
+
+public class CaricaDizionario {
+	public static void main(String[] args)
+		throws IOException {
+		FileReader f = new FileReader("prova.txt");
+		
+		BufferedReader b = new BufferedReader(f);
+		
+		String s;
+		while(true){
+			s=b.readLine();
+			if(s==null)
+				break;
+			System.out.println(s);
+		}
+	}
+	
+
+}

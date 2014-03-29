@@ -1,0 +1,29 @@
+package utils;
+
+import java.util.ArrayList;
+
+public class CassaPizzeria implements Cassa {
+	
+	private ArrayList<Prodotto> conto = new ArrayList<>();
+	
+	@Override
+	public void aggiungiProdotti(Prodotto prodotto, int quantità) {
+		for (int i = 0; i < quantità; i++) {
+			conto.add(prodotto);
+		}
+	}
+	@Override
+	public ArrayList<Prodotto> getConto() {
+		return conto;
+	}
+	@Override
+	public void setConto(ArrayList<Prodotto> conto) {
+		this.conto = conto;
+		
+	}
+	@Override
+	public double calcolaConto() {
+		// TODO Auto-generated method stub
+		return 0;
+	}
+}

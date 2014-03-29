@@ -1,0 +1,24 @@
+package utils;
+
+import java.io.File;
+import java.util.ArrayList;
+import java.util.HashMap;
+
+
+public class Dizionario {
+	public static HashMap<String , String > corrispondenza = new HashMap<>();
+
+	public static HashMap<String, String> getCorrispondenza() {
+		return corrispondenza;
+	}
+
+	public static void setCorrispondenza(HashMap<String, String> corrispondenza,String string) {
+		CaricaDizionario.setFileName(string);
+		String[] arr = string.split("\\-");
+		String primaParola = arr[0]; 
+		String secondaParola = arr[1];
+		for (int i = 0; i < CaricaDizionario.list.size(); i++) {
+			corrispondenza.put(primaParola, secondaParola);
+		}
+	}
+}

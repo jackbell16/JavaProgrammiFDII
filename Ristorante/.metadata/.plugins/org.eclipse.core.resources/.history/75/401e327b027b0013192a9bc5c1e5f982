@@ -1,0 +1,8 @@
+package utils;
+
+public interface MenuPrezzoFisso {
+	
+	public void applicaMenuPrezzoFisso();
+	
+	public boolean verificaMenuPrezzoFisso(int numeroPanini,int numeroBibite);
+}

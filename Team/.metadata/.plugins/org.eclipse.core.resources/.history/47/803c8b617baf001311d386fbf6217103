@@ -1,0 +1,22 @@
+package tests;
+
+import java.util.ArrayList;
+
+import utils.log.Attivita;
+
+public class Tests04 {
+	public static void main(String[] args) {
+		ArrayList<Attivita> list = new ArrayList<>();
+		Attivita attivita = new Attivita(10, "Prova");
+		Attivita attivita2 = new Attivita(30, "Prova1");
+		Attivita attivita3 = new Attivita(40, "Prova2");
+		for (int i = 0; i < list.size(); i++) {
+			System.out.println(list.get(i));
+		}
+		attivita.sommaOre(100);
+		for (int i = 0; i < list.size(); i++) {
+			System.out.println(list.get(i));
+		}
+	}
+
+}

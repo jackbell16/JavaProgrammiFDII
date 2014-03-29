@@ -1,0 +1,29 @@
+package tests;
+
+import java.util.StringTokenizer;
+
+import utils.file.CaricamentoFile;
+import utils.log.Attivita;
+import utils.log.Data;
+import utils.log.Dipendente;
+
+public class Tests02 {
+	public static void main(String[] args) {
+		CaricamentoFile file = new CaricamentoFile();
+		file.setNomeFile("prova.txt");
+		for (int i = 0; i < file.getList().size(); i++) {
+			StringTokenizer stringTokenizer = new StringTokenizer(file.getList().get(i));
+			String cognome = stringTokenizer.nextToken();
+			String nome = stringTokenizer.nextToken();
+			int ore = Integer.valueOf(stringTokenizer.nextToken());
+			String nome = stringTokenizer.nextToken();
+			String giorno = stringTokenizer.nextToken("-");
+			String mese = stringTokenizer.nextToken("-");
+			String anno = stringTokenizer.nextToken("-");
+			Attivita attivitaSvolta = new Attivita(ore, nome);
+			Dipendente dipendente = new Dipendente(nome, cognome, attivitaSvolta);
+			Data data = new Data(giorno, mese, anno);
+			System.out.println(dipendente+" "+attivitaSvolta+" "+data);
+		}
+	}
+}

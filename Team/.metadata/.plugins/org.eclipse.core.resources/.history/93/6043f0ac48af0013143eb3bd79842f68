@@ -1,0 +1,15 @@
+package utils.log;
+
+import java.util.ArrayList;
+
+public interface InterpreteFileLog {
+	/**
+	 * Questo metodo trasforma un {@link ArrayList} si stringhe,
+	 * in un {@link ArrayList} di {@link Log}
+	 * @param list
+	 */
+	public void fileToLog(ArrayList<String> list);
+	
+	public ArrayList<Log> getLogs();
+
+}

@@ -1,0 +1,9 @@
+package utils;
+
+public interface MenuPrezzoFisso {
+	
+	public boolean isMenuPrezzoFisso();
+	
+	public double getPrezzoMenuFisso();
+
+}

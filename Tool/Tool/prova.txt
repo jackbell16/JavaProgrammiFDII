@@ -1,0 +1,7 @@
+Info(18:11:21) Caricamento dispositivi
+Errore(18:11:22) Non e' stato possibile caricare un dispositivo
+Errore(18:11:22) Modulo 4536 non caricato
+Info(18:11:22) Avvio Interfaccia
+Info(18:11:25) Termine preparazione Interfaccia
+Eventi(18:12:10) L'Utente ha effettuato la login
+Info(18:12:12) Caricamento informazioni utente

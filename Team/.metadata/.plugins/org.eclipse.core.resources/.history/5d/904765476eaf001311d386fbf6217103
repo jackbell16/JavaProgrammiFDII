@@ -1,0 +1,13 @@
+package utils.report;
+
+import java.util.ArrayList;
+
+import utils.log.Log;
+
+public interface GeneraReport {
+	
+	public void creaReport();
+	
+	public ArrayList<String> getReport();
+
+}

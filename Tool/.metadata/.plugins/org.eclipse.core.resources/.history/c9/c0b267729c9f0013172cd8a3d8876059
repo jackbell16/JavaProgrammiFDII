@@ -1,0 +1,13 @@
+package tests;
+
+import utils.CaricamentoFile;
+import filtri.utils.Evento;
+
+public class Tests03 {
+	public static void main(String[] args) {
+		CaricamentoFile file = new CaricamentoFile();
+		file.setNomeFile("prova.txt");
+		Evento Evento = new Evento();
+		Evento.filtra(file.getList());
+		}
+}

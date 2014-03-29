@@ -1,0 +1,11 @@
+package tests;
+
+import utils.Pizza;
+import utils.RistorantePizzeria;
+
+public class Tests01 {
+	public static void main(String[] args) {
+		RistorantePizzeria pizzeria = new RistorantePizzeria("Pizzeria");
+		Pizza pizza = new Pizza("Margherita,4);
+	}
+}

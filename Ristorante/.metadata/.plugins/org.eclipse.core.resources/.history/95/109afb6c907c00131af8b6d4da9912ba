@@ -1,0 +1,16 @@
+package utils;
+
+
+public class CassaPizzeria extends Cassa implements ICassa {
+	
+	@Override
+	public double calcolaConto() {
+		double totale = 0;
+		System.out.println(getConto().size());
+		for (int i = 0; i < getConto().size(); i++) {
+			totale+=getConto().get(i).getPrezzo();
+		}
+		//getConto().clear();
+		return totale;
+	}
+}

@@ -1,0 +1,22 @@
+package tests;
+
+import utils.Bibita;
+import utils.Cassa;
+import utils.CassaPaninoteca;
+import utils.CassaPizzeria;
+import utils.Panino;
+import utils.Pizza;
+import utils.ProxyCassa;
+
+public class Tests02 {
+	public static void main(String[] args) {
+		CassaPaninoteca cassaPaninoteca = new CassaPaninoteca();
+		Panino panino = new Panino("Prosciutto",3);
+		Bibita bibita = new Bibita("Coca Cola", 2.50);
+		cassaPaninoteca.aggiungiProdotti(bibita, 1);
+		cassaPaninoteca.aggiungiProdotti(panino, 1);
+		System.out.println(cassaPaninoteca.calcolaConto());
+		
+		
+	}
+}

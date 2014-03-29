@@ -1,0 +1,36 @@
+package utils.file;
+
+import java.io.BufferedReader;
+import java.io.FileNotFoundException;
+import java.io.FileReader;
+import java.io.IOException;
+import java.util.ArrayList;
+
+public class CaricamentoFile {
+	private static BufferedReader reader;
+	private static ArrayList<String> list = new ArrayList<>();
+	public void setFileName(String string){
+		try {
+			reader = new BufferedReader(new FileReader(string));
+			String line = reader.readLine();
+			getList().clear();
+			while(line!=null){
+				getList().add(line);
+				line = reader.readLine();
+			}
+			reader.close();
+		} catch (FileNotFoundException e) {
+			e.printStackTrace();
+		} catch (IOException e) {
+			e.printStackTrace();
+		}
+	}
+	public static ArrayList<String> getList() {
+		return list;
+	}
+	public static void setList(ArrayList<String> list) {
+		CaricamentoFile.list = list;
+	}
+	
+
+}

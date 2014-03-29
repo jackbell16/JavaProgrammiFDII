@@ -1,0 +1,10 @@
+package utils;
+
+public class ProxyCassa implements ICassa extends Cassa {
+	@Override
+	public double calcolaConto() {
+		// TODO Auto-generated method stub
+		return 0;
+	}
+
+}

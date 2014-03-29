@@ -1,0 +1,11 @@
+package tests;
+
+import utils.Dizionario;
+
+public class Test {
+	public static void main(String[] args) {
+		Dizionario.setCorrispondenza(Dizionario.corrispondenza, "prova.txt");
+		System.out.println(Dizionario.corrispondenza.get("Giallo"));
+		System.out.println(Dizionario.corrispondenza.values());
+	}
+}

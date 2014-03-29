@@ -1,0 +1,11 @@
+package tests;
+
+public class Tests03 {
+	public static void main(String[] args) {
+		String string = "ciao)";
+		System.out.println(string);
+		string.replace("i", "");
+		System.out.println(string);
+	}
+
+}

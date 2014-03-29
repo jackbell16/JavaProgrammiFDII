@@ -1,0 +1,23 @@
+package tests;
+
+import utils.CassaPizzeria;
+import utils.Pizza;
+import utils.RistorantePizzeria;
+
+public class Tests01 {
+	public static void main(String[] args) {
+		RistorantePizzeria pizzeria = new RistorantePizzeria("Pizzeria");
+		Pizza pizza = new Pizza("Margherita",4);
+		Pizza pizza2 = new Pizza("Napoli", 5);
+		Pizza pizza3 = new Pizza("Americana", 6.50);
+		pizzeria.aggiungiProdotto(pizza);
+		pizzeria.aggiungiProdotto(pizza2);
+		pizzeria.aggiungiProdotto(pizza3);
+		CassaPizzeria cassaPizzeria = new CassaPizzeria();
+		cassaPizzeria.aggiungiProdotti(pizza, 3);
+		cassaPizzeria.aggiungiProdotti(pizza2, 1);
+		cassaPizzeria.aggiungiProdotti(pizza3, 2);
+		System.out.println(cassaPizzeria.calcolaConto());
+		System.out.println(cassaPizzeria.calcolaConto());
+	}
+}

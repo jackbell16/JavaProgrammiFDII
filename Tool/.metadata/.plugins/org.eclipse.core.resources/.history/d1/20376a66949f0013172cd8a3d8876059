@@ -1,0 +1,33 @@
+package gui.user;
+
+import java.util.Observable;
+import java.util.Observer;
+
+import javax.swing.JTextArea;
+
+import filtri.utils.ProxyFiltro;
+
+public class ToolView implements Observer {
+	
+	private JTextArea area;
+	private ProxyFiltro proxyFiltro = new ProxyFiltro();
+	
+	
+	
+	public ToolView(ProxyFiltro proxyFiltro) {
+		super();
+		this.proxyFiltro = proxyFiltro;
+		proxyFiltro.addObserver(this);
+		area = new JTextArea();
+		add(area);
+	}
+
+
+
+	@Override
+	public void update(Observable o, Object arg) {
+		// TODO Auto-generated method stub
+		
+	}
+
+}

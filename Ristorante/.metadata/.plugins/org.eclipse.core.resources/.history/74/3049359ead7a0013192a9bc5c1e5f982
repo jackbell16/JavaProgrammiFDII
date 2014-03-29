@@ -1,0 +1,14 @@
+package utils;
+
+import java.util.ArrayList;
+
+public class RistorantePizzeria {
+	private ArrayList<String> pizze;
+	public ArrayList<String> getPizze() {
+		return pizze;
+	}
+
+	public void setPizze(ArrayList<String> pizze) {
+		this.pizze = pizze;
+	}
+}

@@ -1,0 +1,23 @@
+package tests;
+
+import utils.CassaPizzeria;
+import utils.Pizza;
+import utils.RistorantePizzeria;
+
+public class Tests02 {
+	public static void main(String[] args) {
+		RistorantePizzeria pizzeria = new RistorantePizzeria();
+		Pizza pizza = new Pizza("Margherita", 4);
+		Pizza pizza2 = new Pizza("Napoli", 5.50);
+		pizzeria.aggiungiPizza(pizza);
+		pizzeria.aggiungiPizza(pizza2);
+		CassaPizzeria cassaPizzeria = new CassaPizzeria();
+		cassaPizzeria.aggiungiProdotti(pizza, 2);
+		cassaPizzeria.aggiungiProdotti(pizza2, 3);
+		System.out.println(cassaPizzeria.getConto().size());
+		for (int i = 0; i < cassaPizzeria.getConto().size(); i++) {
+			System.out.println(cassaPizzeria.getConto().get(i));
+		}
+		System.out.println(cassaPizzeria.calcolaConto());
+	}
+}

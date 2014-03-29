@@ -1,0 +1,9 @@
+package utils.log;
+
+import java.util.ArrayList;
+
+public interface InterpreteFileLog {
+	
+	public ArrayList<Log> fileToLog(ArrayList<String> list);
+
+}

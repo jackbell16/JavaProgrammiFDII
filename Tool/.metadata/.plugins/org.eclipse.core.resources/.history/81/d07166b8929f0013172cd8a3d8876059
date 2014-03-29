@@ -1,0 +1,57 @@
+package gui.user;
+
+import java.awt.event.ActionEvent;
+import java.awt.event.ActionListener;
+import java.io.File;
+
+import javax.swing.JFileChooser;
+import javax.swing.JMenu;
+import javax.swing.JMenuBar;
+import javax.swing.JMenuItem;
+
+import utils.CaricamentoFile;
+import filtri.utils.Errore;
+import filtri.utils.Evento;
+import filtri.utils.Info;
+import filtri.utils.ProxyFiltro;
+
+public class ToolMenu extends JMenuBar {
+	
+	private ProxyFiltro proxyFiltro;
+	private Errore errore = new Errore();
+	private Evento evento = new Evento();
+	private Info info = new Info();
+	
+	public ToolMenu(ProxyFiltro proxyFiltro){
+		this.proxyFiltro = proxyFiltro;
+		JMenu menu = new JMenu("File");
+		JMenuItem item = new JMenuItem("Apri file");
+		item.addActionListener(new ActionListener() {
+			@Override
+			public void actionPerformed(ActionEvent e) {
+				fileChooser.setVisible(true);
+				int status = fileChooser.showOpenDialog(null);
+				if (status == JFileChooser.APPROVE_OPTION) {
+			      File selectedFile = fileChooser.getSelectedFile();
+			      System.out.println(selectedFile.getParent());
+			      System.out.println(selectedFile.getPath());
+			      indirizzoFile = selectedFile.getPath();
+			      caricamentoFile.setFileName(indirizzoFile);
+			      CaricamentoFile.setFileName(selectedFile.getName());
+			    } else if (status == JFileChooser.CANCEL_OPTION) {
+			      System.out.println("canceled");
+			    }
+			}
+		});
+		menu.add(item);
+		JMenu menu2 = new JMenu("Filtra Log");
+		JMenuItem item2 = new JMenuItem("Evento");
+		JMenuItem item3 = new JMenuItem("Errore");
+		JMenuItem item4 = new JMenuItem("Info");
+		menu2.add(item2);
+		menu2.add(item3);
+		menu2.add(item4);
+		add(menu);
+		add(menu2);
+	}
+}

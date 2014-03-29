@@ -1,0 +1,18 @@
+package tests;
+
+import java.util.HashMap;
+
+import utils.CaricaDizionario;
+import utils.Dizionario;
+
+public class Test {
+	public static void main(String[] args) {
+		HashMap<String , String > prova = new HashMap<>();
+		prova.put("ciao", "hello");
+		Dizionario.setCorrispondenza(Dizionario.corrispondenza, "prova.txt");
+		System.out.println(Dizionario.corrispondenza.containsKey("giallo"));
+//		for (int i = 0; i < CaricaDizionario.list.size(); i++) {
+//			System.out.println(CaricaDizionario.list.get(i));
+//		}
+	}
+}

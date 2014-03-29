@@ -1,0 +1,20 @@
+package utils;
+
+import java.util.ArrayList;
+import java.util.StringTokenizer;
+
+import time.Orario;
+import filtri.utils.Log;
+
+public class InterpreteFileLog {
+
+	
+	public void fileTolog(ArrayList<String> list){
+		for (int i = 0; i < list.size(); i++) {
+			StringTokenizer tokenizer = new StringTokenizer();
+			String tipo = tokenizer.nextElement();
+			Orario orario = new Orario(ora, minuti, secondi);
+			Log log = new Log(tipo, orario, testo)
+		}
+	}
+}

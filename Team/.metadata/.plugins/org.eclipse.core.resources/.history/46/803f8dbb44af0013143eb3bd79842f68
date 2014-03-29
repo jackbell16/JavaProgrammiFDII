@@ -1,0 +1,8 @@
+package utils.log;
+
+public class Attivita {
+	
+	private int ora;
+	private String nome;
+
+}

@@ -1,0 +1,31 @@
+package gui.user;
+
+import java.awt.BorderLayout;
+import java.awt.GridLayout;
+import java.awt.event.ActionEvent;
+import java.awt.event.ActionListener;
+
+import javax.swing.JButton;
+import javax.swing.JTextField;
+
+public class ToolController {
+	
+	public Controller(final Modell modell) {
+		super();
+		final JTextField field = new JTextField();
+		JButton button = new JButton("Invio");
+		setLayout(new GridLayout(2,1));
+		add(field,BorderLayout.NORTH);
+		add(button,BorderLayout.SOUTH);
+		button.addActionListener(new ActionListener() {
+			
+			@Override
+			public void actionPerformed(ActionEvent e) {
+				modell.setNome(field.getText());
+				modell.update();
+				
+			}
+		});
+	}
+
+}

@@ -1,0 +1,10 @@
+package utils.report;
+
+import java.util.ArrayList;
+
+public interface GeneraReport {
+	
+	
+	public ArrayList<String> getReport();
+
+}

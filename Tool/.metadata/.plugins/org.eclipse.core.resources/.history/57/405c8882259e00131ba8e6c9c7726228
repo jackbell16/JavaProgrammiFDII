@@ -1,0 +1,13 @@
+package filtri.utils;
+
+import time.Orario;
+
+public class Log {
+	
+	private String tipo;
+	private Orario orario;
+	private String testo;
+	
+	
+
+}

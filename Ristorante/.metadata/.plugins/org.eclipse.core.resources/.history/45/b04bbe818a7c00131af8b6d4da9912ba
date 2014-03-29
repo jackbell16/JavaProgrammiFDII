@@ -1,0 +1,35 @@
+package utils;
+
+import java.util.ArrayList;
+
+public class CassaPaninoteca implements ICassa {
+
+	private ArrayList<Prodotto> conto = new ArrayList<>();
+	MenuPrezzoFisso menuPrezzoFisso;
+	@Override
+	public void aggiungiProdotti(Prodotto prodotto, int quantità) {
+		for (int i = 0; i < quantità; i++) {
+			conto.add(prodotto);
+		}
+	}
+	@Override
+	public double calcolaConto() {
+		double totale = 0;
+		if(menuPrezzoFisso.isMenuPrezzoFisso()){
+			totale = menuPrezzoFisso.getPrezzoMenuFisso();
+		}else{
+			for (int i = 0; i < getConto().size(); i++) {
+				totale+=getConto().get(i).getPrezzo();
+			}
+		}
+		return totale;
+	}
+	@Override
+	public ArrayList<Prodotto> getConto() {
+		return conto;
+	}
+	@Override
+	public void setConto(ArrayList<Prodotto> conto) {
+		this.conto = conto;
+	}
+}

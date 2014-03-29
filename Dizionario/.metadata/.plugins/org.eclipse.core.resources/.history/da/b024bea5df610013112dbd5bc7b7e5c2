@@ -1,0 +1,33 @@
+package utils;
+
+import java.io.BufferedReader;
+import java.io.File;
+import java.io.FileNotFoundException;
+import java.io.FileReader;
+import java.io.IOException;
+
+public class CaricaDizionario {
+	public static void setFileName(String string){
+	
+		try {
+			BufferedReader reader=new BufferedReader(new FileReader(new File(string)));
+			
+			String line=reader.readLine();
+			
+			while(line!=null){
+				
+				String f = null;
+				
+				System.out.println(line);
+				
+				line=reader.readLine();
+			}
+			
+		} catch (FileNotFoundException e) {
+			e.printStackTrace();
+		} catch (IOException e) {
+			e.printStackTrace();
+		}
+	
+	}
+}

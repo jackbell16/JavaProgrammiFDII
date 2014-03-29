@@ -1,0 +1,15 @@
+package tests;
+
+import java.util.StringTokenizer;
+
+import utils.file.CaricamentoFile;
+
+public class Tests02 {
+	public static void main(String[] args) {
+		CaricamentoFile file = new CaricamentoFile();
+		file.setNomeFile("prova.txt");
+		for (int i = 0; i < file.getList().size(); i++) {
+			StringTokenizer stringTokenizer = new StringTokenizer(file.getList().get(i));
+		}
+	}
+}

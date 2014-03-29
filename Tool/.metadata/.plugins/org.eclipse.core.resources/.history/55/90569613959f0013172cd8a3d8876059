@@ -1,0 +1,27 @@
+package gui.user;
+
+import java.awt.BorderLayout;
+
+import javax.swing.JFrame;
+import javax.swing.JPanel;
+import javax.swing.JTextArea;
+import javax.tools.Tool;
+
+import filtri.utils.ProxyFiltro;
+
+public class ToolMain {
+	public static void main(String[] args) {
+		ProxyFiltro proxyFiltro = new ProxyFiltro();
+		ToolMenu toolMenu = new ToolMenu(proxyFiltro);
+		ToolView toolView = new ToolView(proxyFiltro);
+		JPanel panel = new JPanel();
+		panel.add(toolView);
+		JTextArea area = new JTextArea();
+		JFrame frame = new JFrame("Tool");
+		frame.setSize(500, 500);
+		frame.setDefaultCloseOperation(JFrame.EXIT_ON_CLOSE);
+		frame.setJMenuBar(toolMenu);
+		frame.getContentPane().add(toolView);
+		frame.setVisible(true);
+	}
+}

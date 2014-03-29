@@ -1,0 +1,29 @@
+1389436996782	Rename type 'RistorantePizzeria'
+1389465305424	Delete element
+1389467126031	Extract method 'scontrino'
+1389468650351	Delete element
+1389471382100	Extract superclass 'Menu'
+1389471490659	Delete element
+1389471763338	Extract method 'selezionaPizzaMenu'
+1389472385819	Delete element
+1389472427490	Extract method 'impostaSelezionaPizze'
+1389472514554	Extract method 'inserisciJMenuItemPizze'
+1389472529915	Extract method 'impostaMenuPizze'
+1389472962321	Extract method 'selezionaMenuQuantità'
+1389473122583	Extract method 'impostaMenuQuantità'
+1389473164262	Extract method 'inserisciJMenuteItemQuantità'
+1389473610310	Delete element
+1389473633831	Delete elements
+1389473722491	Delete element
+1389515492951	Rename type 'Articolo'
+1389516379375	Extract Class...
+1389516465726	Delete element
+1389516694858	Rename type 'PannelloCassa'
+1389518081389	Rename method 'inserisciJMenuItemPizze'
+1389518112178	Rename method 'impostaMenuPizze'
+1389541720099	Delete element
+1389541920436	Delete element
+1389541939005	Delete element
+1389542217545	Rename method 'selezionaPizzaMenu'
+1389543175260	Rename method 'impostaMenuPizze'
+1389543290926	Rename method 'selezionaBibitaoMenu'

@@ -1,0 +1,28 @@
+package utils.file;
+
+import java.io.BufferedReader;
+import java.io.File;
+import java.io.FileNotFoundException;
+import java.io.FileReader;
+import java.io.IOException;
+import java.util.ArrayList;
+
+public class CaricamentoFile {
+	
+	private ArrayList<String> list;
+	private BufferedReader bufferedReader;
+	
+	public void setNomeFile(String percorsoFile) throws IOException{
+		list = new ArrayList<>();
+		try {
+			bufferedReader = new BufferedReader(new FileReader(new File(percorsoFile)));
+			String line = bufferedReader.readLine();
+			while(line!=null){
+				list.add(line);
+			}
+		} catch (FileNotFoundException e) {
+			System.err.println("Impossibile aprire file");
+			e.printStackTrace();
+		}
+	}
+}

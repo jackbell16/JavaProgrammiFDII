@@ -1,0 +1,12 @@
+package tests;
+
+import java.util.Random;
+
+public class Tests02 {
+	public static void main(String[] args) {
+		int numero = 0;
+		Random random = new Random();
+		numero = random.nextInt(8);
+		System.out.println(numero);
+	}	
+}

@@ -1,0 +1,14 @@
+package utils;
+
+import java.util.ArrayList;
+
+public class CassaPizzeria {
+	private ArrayList<Pizza> conto = new ArrayList<>();
+	public double calcolaConto(){
+		double totale = 0;
+		return totale;
+	}
+	public void aggiungiProdotti(Pizza pizza, int quantità){
+		conto.add(pizza);
+	}
+}

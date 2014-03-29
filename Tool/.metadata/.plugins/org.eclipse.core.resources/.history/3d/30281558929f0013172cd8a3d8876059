@@ -1,0 +1,34 @@
+package gui.user;
+
+import javax.swing.JMenu;
+import javax.swing.JMenuBar;
+import javax.swing.JMenuItem;
+
+import filtri.utils.Errore;
+import filtri.utils.Evento;
+import filtri.utils.Info;
+import filtri.utils.ProxyFiltro;
+
+public class ToolMenu extends JMenuBar {
+	
+	private ProxyFiltro proxyFiltro;
+	private Errore errore = new Errore();
+	private Evento evento = new Evento();
+	private Info info = new Info();
+	
+	public ToolMenu(ProxyFiltro proxyFiltro){
+		this.proxyFiltro = proxyFiltro;
+		JMenu menu = new JMenu("File");
+		JMenuItem item = new JMenuItem("Apri file");
+		menu.add(item);
+		JMenu menu2 = new JMenu("Filtra Log");
+		JMenuItem item2 = new JMenuItem("Evento");
+		JMenuItem item3 = new JMenuItem("Errore");
+		JMenuItem item4 = new JMenuItem("Info");
+		menu2.add(item2);
+		menu2.add(item3);
+		menu2.add(item4);
+		add(menu);
+		add(menu2);
+	}
+}

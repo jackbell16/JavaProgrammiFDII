@@ -1,0 +1,16 @@
+package utils;
+
+import java.util.ArrayList;
+
+public class MenuTuristico implements MenuPrezzoFisso {
+	private static double prezzoMenu = 4.50;
+	@Override
+	public double getPrezzoMenuFisso() {
+		return prezzoMenu;
+	}
+	@Override
+	public boolean isMenuPrezzoFisso(ArrayList<Prodotto> prodotti) {
+		
+		return false;
+	}
+}

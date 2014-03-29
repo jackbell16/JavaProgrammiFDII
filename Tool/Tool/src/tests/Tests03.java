@@ -1,0 +1,22 @@
+/**
+ * Questo test ha il compito di verificare il corretto funzionamento del proxy {@link ProxyFiltro}
+ */
+package tests;
+
+import utils.CaricamentoFile;
+import filtri.utils.Info;
+import filtri.utils.ProxyFiltro;
+
+public class Tests03 {
+	public static void main(String[] args) {
+		ProxyFiltro proxyFiltro = new ProxyFiltro();
+		proxyFiltro.setFiltro(new Info());
+		CaricamentoFile list = new CaricamentoFile();
+		list.setNomeFile("prova.txt");
+		proxyFiltro.filtra(list.getList());
+		for (int i = 0; i < proxyFiltro.getRisultato().size(); i++) {
+			System.out.println(proxyFiltro.getFiltro().getRisultato().get(i));
+		}
+	}
+
+}

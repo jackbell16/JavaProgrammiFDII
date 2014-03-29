@@ -1,0 +1,17 @@
+package tests;
+
+import utils.Bibita;
+import utils.CassaPaninoteca;
+import utils.Panino;
+
+public class Tests04 {
+	public static void main(String[] args) {
+		Panino panino = new Panino("Prosciutto", 3);
+		Bibita bibita = new Bibita("Coca", 2);
+		CassaPaninoteca cassaPaninoteca = new CassaPaninoteca();
+		cassaPaninoteca.aggiungiBibite(bibita, 1);
+		cassaPaninoteca.aggiungiPanini(panino, 4);
+		System.out.println(cassaPaninoteca.calcolaConto());
+	}
+
+}

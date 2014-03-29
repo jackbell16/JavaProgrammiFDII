@@ -1,0 +1,11 @@
+package tests;
+
+import utils.Dizionario;
+import utils.DizionarioEsempio;
+
+public class Test {
+	public static void main(String[] args) {
+		DizionarioEsempio.getInstance().setCorrispondenza(DizionarioEsempio.corrispondenzaParola, "prova.txt");
+		System.out.println("Traduzione "+DizionarioEsempio.getInstance().corrispondenzaParola.get("Giallo")+" Frase "+DizionarioEsempio.corrispondenzaFrase.get(Dizionario.corrispondenzaParola.get("Giallo")));
+	}
+}

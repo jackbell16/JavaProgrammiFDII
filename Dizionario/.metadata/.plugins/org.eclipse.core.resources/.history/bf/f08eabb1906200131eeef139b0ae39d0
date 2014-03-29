@@ -1,0 +1,14 @@
+package tests;
+
+import utils.CaricaDizionario;
+import utils.Dizionario;
+
+public class Test {
+	public static void main(String[] args) {
+		System.out.println(dizionario.getCorrispondenza().get("ciao"));
+		CaricaDizionario.setFileName("prova.txt");
+		for (int i = 0; i < CaricaDizionario.list.size(); i++) {
+			System.out.println(CaricaDizionario.list.get(i));
+		}
+	}
+}

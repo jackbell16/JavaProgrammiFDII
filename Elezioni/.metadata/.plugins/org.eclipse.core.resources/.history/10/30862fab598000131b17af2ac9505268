@@ -1,0 +1,84 @@
+package utils;
+
+import java.util.ArrayList;
+import java.util.Random;
+
+public class Seggio {
+	private ArrayList<Cittadino> scrutinatori = new ArrayList<>();
+	private ArrayList<Cittadino> scrutinatoriPossibili = new ArrayList<>();
+	private ArrayList<Cittadino> cittadino2 = new ArrayList<>();
+	private ArrayList<Cittadino> cittadino1 = new ArrayList<>();
+	private ArrayList<Cittadino> votanti = new ArrayList<>();
+	private static int numeroScrutinatori = 2;
+	public void estrazioneCittadini(ArrayList<Cittadino> cittadini){
+		scrutinatoriPossibili(cittadini);
+		for (int i = 0; i < numeroScrutinatori; i++) {
+			int index = scegliNumero(scrutinatoriPossibili.size());
+			Cittadino cittadino = scrutinatoriPossibili.get(index);
+			scrutinatori.add(cittadino);
+			scrutinatoriPossibili.remove(index);
+		}
+	}
+	
+	public int scegliNumero(int massimoNumero){
+		int numero = 0;
+		Random random = new Random();
+		numero = random.nextInt(massimoNumero);
+		return numero; 
+	}
+
+	public ArrayList<Cittadino> getScrutinatori() {
+		return scrutinatori;
+	}
+
+	public void setScrutinatori(ArrayList<Cittadino> scrutinatori) {
+		this.scrutinatori = scrutinatori;
+	}
+	
+	public void scrutinatoriPossibili(ArrayList<Cittadino> cittadini){
+		for (int i = 0; i < cittadini.size(); i++) {
+			Cittadino cittadino = cittadini.get(i);
+			if(cittadino.isScrutinabile()){
+				scrutinatoriPossibili.add(cittadino);
+			}
+		}
+	}
+	
+	public void votanti(ArrayList<Cittadino> cittadini){
+		for (int i = 0; i < cittadini.size(); i++) {
+			Cittadino cittadino = cittadini.get(i);
+			if(cittadino.getEtà()>=18){
+				votanti.add(cittadino);
+			}
+		}
+	}
+	
+	public void impostaSchede(){
+		for (int i = 0; i < votanti.size(); i++) {
+			Cittadino cittadino = votanti.get(i);
+			if(cittadino.getValoreVoto()==2){
+				cittadino2.add(cittadino);
+			}else{
+				cittadino1.add(cittadino);
+			}
+		}
+	}
+
+	public ArrayList<Cittadino> getCittadino2() {
+		return cittadino2;
+	}
+
+	public void setCittadino2(ArrayList<Cittadino> cittadino2) {
+		this.cittadino2 = cittadino2;
+	}
+
+	public ArrayList<Cittadino> getCittadino1() {
+		return cittadino1;
+	}
+
+	public void setCittadino1(ArrayList<Cittadino> cittadino1) {
+		this.cittadino1 = cittadino1;
+	}
+	
+}
+

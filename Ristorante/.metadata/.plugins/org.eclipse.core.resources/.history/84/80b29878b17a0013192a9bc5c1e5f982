@@ -1,0 +1,19 @@
+package utils;
+
+public class Portata {
+	private String nomePortata;
+
+	public Portata(String nomePortata) {
+		super();
+		this.nomePortata = nomePortata;
+	}
+
+	public String getNomePortata() {
+		return nomePortata;
+	}
+
+	public void setNomePortata(String nomePortata) {
+		this.nomePortata = nomePortata;
+	}
+	
+}

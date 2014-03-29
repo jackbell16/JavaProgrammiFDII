@@ -1,0 +1,45 @@
+package utils;
+
+import java.util.ArrayList;
+
+public class CassaPaninoteca {
+	private ArrayList<Panino> paniniMangiati = new ArrayList<>();
+	private ArrayList<Bibita> bibitaBevute = new ArrayList<>();
+	private ArrayList<Object> conto = new ArrayList<>();
+	public double calcolaConto(){
+		double totale = 0;
+		aggiungiBibiteConto();
+		aggiungiPaniniConto();
+		for (int i = 0; i < conto.size(); i++) {
+			totale+=paniniMangiati.get(i).getPrezzo();
+		}
+		return totale;
+	}
+	public void aggiungiPanini(Panino panino, int quantità){
+		for (int i = 0; i < quantità; i++) {
+			paniniMangiati.add(panino);
+		}
+	}
+	public void aggiungiBibite(Bibita bibita, int quantità){
+		for (int i = 0; i < quantità; i++) {
+			bibitaBevute.add(bibita);
+		}
+	}
+	private void aggiungiPaniniConto(){
+		conto.clear();
+		for (int i = 0; i < paniniMangiati.size(); i++) {
+			conto.add(paniniMangiati.get(i));
+		}
+	}
+	
+	private void aggiungiBibiteConto(){
+		for (int i = 0; i < bibitaBevute.size(); i++) {
+			conto.add(bibitaBevute.get(i));
+		}
+	}
+	private void applicaMenuFisso(int numeroPanini,int numeroBibite){
+		if(numeroBibite==1 && numeroPanini==1){
+			
+		}
+	}
+}	

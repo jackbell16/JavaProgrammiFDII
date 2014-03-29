@@ -1,0 +1,158 @@
+package userpanel;
+
+import java.awt.BorderLayout;
+import java.awt.event.ActionEvent;
+import java.awt.event.ActionListener;
+import java.util.ArrayList;
+
+import javax.swing.JButton;
+import javax.swing.JFrame;
+import javax.swing.JMenu;
+import javax.swing.JMenuBar;
+import javax.swing.JMenuItem;
+import javax.swing.JTextArea;
+
+import utils.CassaCinese;
+import utils.Portata;
+import utils.RistoranteCinese;
+
+public class PannelloCassaCinese {
+	static int quantità = 0;
+	static boolean setAbbondante = false;
+	static double totale = 0;
+	static String newLine = "\n";
+	final static RistoranteCinese RISTORANTE_CINESE = new RistoranteCinese();
+	final static ArrayList<JMenuItem> jMenuteItemPortate = new ArrayList<>();
+	final static ArrayList<JMenuItem> jMenuteItemsQuantità = new ArrayList<>();
+	final static CassaCinese CASSA_CINESE = new CassaCinese();
+	final static JTextArea area = new JTextArea();
+	
+	private static void selezionaPortataMenu(final int i) {
+		jMenuteItemPortate.get(i).addActionListener(new ActionListener() {
+			
+			@Override
+			public void actionPerformed(ActionEvent e) {
+				CASSA_CINESE.getConto().get(i).setAbbondante(setAbbondante);
+				area.append(quantità+" x "+CASSA_CINESE.getConto().get(i).toString()+" = "+calcolaRisultatoParziale(i)+ " Euro");
+				area.append(newLine);
+				CASSA_CINESE.aggiungiProdotti(RISTORANTE_CINESE.getPortate().get(i), quantità);
+				setAbbondante=false;
+			}
+		});
+	}
+	
+	private static double calcolaRisultatoParziale(int idexPortata){
+		return quantità*RISTORANTE_CINESE.getPortate().get(idexPortata).getPrezzo();
+	}
+	
+	private static void impostaSelezionaPizze() {
+		for (int i = 0; i < jMenuteItemPortate.size(); i++) {
+			selezionaPortataMenu(i);
+		}
+	}
+	
+	public static void main(String[] args) {
+			final Portata portata = new Portata("RisoCinese", 4);
+			Portata portata2 = new Portata("Patatine", 3.50);
+			Portata portata3 = new Portata("Salmone", 7);
+			RISTORANTE_CINESE.aggiungiProdottoCinese(portata);
+			RISTORANTE_CINESE.aggiungiProdottoCinese(portata2);
+			RISTORANTE_CINESE.aggiungiProdottoCinese(portata3);
+			final JButton calcolaButton = new JButton("Calcola");
+			JMenuBar jMenuBar = new JMenuBar();
+			JMenu menu = new JMenu("Seleziona quantità");
+			JMenu menu2 = new JMenu("Abbondante");
+			JMenu menu3 = new JMenu("Seleziona portata");
+			JMenu menu4 = new JMenu("Strumenti");
+			JMenuItem abbondante = new JMenuItem("Si");
+			JMenuItem pulisci = new JMenuItem("Pulisci");
+			inserisciJMenuteItemQuantità();
+			inserisciJMenuItemPortate();
+			impostaMenuQuantità(menu);
+			impostaMenuPortate(menu3);	
+			menu2.add(abbondante);
+			menu4.add(pulisci);
+			jMenuBar.add(menu);
+			jMenuBar.add(menu2);
+			jMenuBar.add(menu3);
+			jMenuBar.add(menu4);
+			selezionaMenuQuantità(0);
+			selezionaMenuQuantità(1);
+			selezionaMenuQuantità(2);
+			selezionaMenuQuantità(3);
+			impostaSelezionaPizze();
+			area.setEditable(false);
+			abbondante.addActionListener(new ActionListener() {
+				
+				@Override
+				public void actionPerformed(ActionEvent e) {
+					setAbbondante=true;
+					
+				}
+			});
+			pulisci.addActionListener(new ActionListener() {
+				
+				@Override
+				public void actionPerformed(ActionEvent e) {
+					area.setText(newLine);
+					totale = 0;
+				}
+			});
+			calcolaButton.addActionListener(new ActionListener() {
+				
+				@Override
+				public void actionPerformed(ActionEvent e) {
+					totale = CASSA_CINESE.calcolaConto();
+					area.append(newLine);
+					area.append(""+totale+ " Euro");
+					System.out.println(totale);
+					totale = 0;
+				}
+			});
+			JFrame frame = new JFrame("Ristorante Cinese");
+			frame.setSize(500, 500);
+			frame.setDefaultCloseOperation(JFrame.EXIT_ON_CLOSE);
+			frame.setJMenuBar(jMenuBar);
+			frame.add(calcolaButton,BorderLayout .SOUTH);
+			frame.add(area,BorderLayout .CENTER);
+			frame.setVisible(true);
+		}
+
+	private static void inserisciJMenuteItemQuantità() {
+		for (int i = 1; i < 5; i++) {
+			JMenuItem jMenuItem = new JMenuItem(i+"x");
+			jMenuteItemsQuantità.add(jMenuItem);
+		}
+	}
+
+	private static void impostaMenuQuantità(JMenu menu) {
+		for (int i = 0; i < 4; i++) {
+			menu.add(jMenuteItemsQuantità.get(i));
+		}
+	}
+
+	private static void selezionaMenuQuantità(final int i) {
+		jMenuteItemsQuantità.get(i).addActionListener(new ActionListener() {
+		@Override
+		public void actionPerformed(ActionEvent e) {
+			quantità = i+1;
+		}
+});
+	}
+
+	private static void impostaMenuPortate(JMenu menu3) {
+		for (int i = 0; i < jMenuteItemPortate.size(); i++) {
+			menu3.add(jMenuteItemPortate.get(i));
+		}
+	}
+
+	private static void inserisciJMenuItemPortate() {
+		for (int i = 0; i < RISTORANTE_CINESE.getPortate().size(); i++) {
+			JMenuItem jMenuItem = new JMenuItem(RISTORANTE_CINESE.getPortate().get(i).toString());
+			jMenuteItemPortate.add(jMenuItem);
+		}
+	}
+
+	
+		
+}

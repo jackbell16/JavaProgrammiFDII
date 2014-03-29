@@ -1,0 +1,23 @@
+package utils;
+
+import javax.swing.JFrame;
+import javax.swing.JMenu;
+import javax.swing.JMenuBar;
+import javax.swing.JMenuItem;
+
+public class Menu extends JMenuBar {
+	JMenuBar menuBar = new JMenuBar();
+	JMenu dizionario = new JMenu("File");
+	JMenu strumenti = new JMenu("Strumenti");
+	JMenuItem dizionarioItem = new JMenuItem("Carica Dizionario");
+	JMenuItem selezionaItem = new JMenuItem("Seleziona traduzione");
+	dizionario.add(dizionarioItem);
+	JMenuItem traduci = new JMenuItem("Traduci");
+	JMenuItem lingua = new JMenuItem("Seleziona lingua");
+	strumenti.add(traduci);
+	strumenti.add(lingua);
+	strumenti.add(selezionaItem);
+	menuBar.add(dizionario);
+	menuBar.add(strumenti);
+
+}

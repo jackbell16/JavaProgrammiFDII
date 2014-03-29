@@ -1,0 +1,43 @@
+package utils;
+
+public class Cittadino {
+	private String nome;
+	private String Cognome;
+	private String codiceFiscale;
+	private int età;
+	public Cittadino(String nome, String cognome, String codiceFiscale, int età) {
+		super();
+		this.nome = nome;
+		Cognome = cognome;
+		this.codiceFiscale = codiceFiscale;
+		this.età = età;
+	}
+	public String getNome() {
+		return nome;
+	}
+	public void setNome(String nome) {
+		this.nome = nome;
+	}
+	public String getCognome() {
+		return Cognome;
+	}
+	public void setCognome(String cognome) {
+		Cognome = cognome;
+	}
+	public String getCodiceFiscale() {
+		return codiceFiscale;
+	}
+	public void setCodiceFiscale(String codiceFiscale) {
+		this.codiceFiscale = codiceFiscale;
+	}
+	public int getEtà() {
+		return età;
+	}
+	public void setEtà(int età) {
+		this.età = età;
+	}
+	@Override
+	public String toString(){
+		return "CF: "+getCodiceFiscale()+" Cognome: "+getCognome()+" Nome: "+getNome()+" Eta': "+getEtà();
+	}
+}

@@ -1,0 +1,13 @@
+package utils;
+
+import java.io.File;
+import java.io.FileReader;
+import java.util.jar.JarFile;
+
+public class CaricaDizionario {
+	public static void main(String[] args) {
+		FileReader f = new FileReader("prova.txt");
+	}
+	
+
+}

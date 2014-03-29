@@ -1,0 +1,13 @@
+package tests;
+
+import utils.Dizionario;
+
+public class Test {
+	public static void main(String[] args) {
+		Dizionario dizionario = new Dizionario();
+		dizionario.setCorrispondenza(Dizionario.corrispondenza, "ciao","hello");
+		System.out.println(Dizionario.corrispondenza);
+	}
+	
+
+}

@@ -1,0 +1,33 @@
+package time;
+
+public class Orario {
+	
+	private int ora;
+	private int minuti;
+	private int secondi;
+	
+	public Orario(int ora, int minuti, int secondi) {
+		super();
+		this.ora = ora;
+		this.minuti = minuti;
+		this.secondi = secondi;
+	}
+	public int getOra() {
+		return ora;
+	}
+	public void setOra(int ora) {
+		this.ora = ora;
+	}
+	public int getMinuti() {
+		return minuti;
+	}
+	public void setMinuti(int minuti) {
+		this.minuti = minuti;
+	}
+	public int getSecondi() {
+		return secondi;
+	}
+	public void setSecondi(int secondi) {
+		this.secondi = secondi;
+	}
+}
